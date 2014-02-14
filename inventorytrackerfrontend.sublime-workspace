@@ -1,0 +1,269 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"In",
+				"IngredientController"
+			],
+			[
+				"name",
+				"name"
+			],
+			[
+				"company",
+				"company_id"
+			],
+			[
+				"Admin",
+				"AdminController"
+			],
+			[
+				"PA",
+				"pathinfo"
+			],
+			[
+				"admin",
+				"admin"
+			],
+			[
+				"Meal",
+				"MealController"
+			],
+			[
+				"up",
+				"updatedMeal"
+			],
+			[
+				"ingre",
+				"ingredient_id"
+			],
+			[
+				"meal",
+				"meal_id"
+			],
+			[
+				"ingredient",
+				"ingredient_id"
+			],
+			[
+				"Locat",
+				"LocationController"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Z/Programs/wamp/www/chaning.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/controllers/AdminController.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/seeds/DatabaseSeeder.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/models/Company.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/models/Inventory.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/routes.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/controllers/CompanyController.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/controllers/InventoryController.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_14_002027_create_inventories_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/seeds/InventoryTableSeeder.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/seeds/MealTableSeeder.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/controllers/MealController.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/controllers/IngredientController.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/controllers/LocationController.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_14_001833_create_locations_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/InventoryTableSeeder.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/models/MealIngredient.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/seeds/KeyTableSeeder.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/seeds/CompanyTableSeeder.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/seeds/LocationTableSeeder.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_14_001916_create_ingredients_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_14_002048_create_keys_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_14_001728_create_companies_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/models/Location.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_14_001855_create_meals_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/seeds/IngredientTableSeeder.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/models/Meal.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/filters.php",
+		"/C/Users/inpho/Desktop/AngularTesting/index.html",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_14_001618_create_key_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_10_030444_create_ingredients_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_09_221949_create_meal_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_09_211956_create_location_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_14_001657_create_inventories_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_13_235925_create_inventory_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_10_215134_api_key_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_13_010458_location_inventory_table.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/database/migrations/2014_02_12_072729_create_meal_ingredients_table.php",
+		"/C/Users/inpho/Desktop/AngularTesting/main.js",
+		"/Z/Programs/wamp/www/inventorytracker/app/config/database.php",
+		"/Z/Programs/wamp/www/inventorytracker/app/models/Key.php",
+		"/C/Program Files (x86)/wamp/bin/php/php5.4.12/php.ini",
+		"/C/Users/Tender/Downloads/Sublime Text 3 Build 3059/Crack/sublime_text.exe"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Meal",
+			"meal",
+			"Meal",
+			"meal",
+			"Meal",
+			"meal",
+			"Meal",
+			"meal",
+			"MealController",
+			"meals",
+			"meal",
+			"meal_id",
+			"ingredient_id",
+			"company",
+			"name",
+			"meal_id",
+			"location",
+			"Location",
+			"location",
+			"name",
+			"company",
+			"dog",
+			"cat",
+			"dog"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "inventorytrackerfrontend.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 418.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

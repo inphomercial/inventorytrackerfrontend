@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html ng-app="inventoryApp">
+<head>
+    <title>Inventory</title>
+
+    <!-- Included CSS Files, use foundation.css if you do not want minified code -->
+  	<link rel="stylesheet" href="foundation.css">
+</head>
+
+<body>
+
+	<div class="row">	
+		<div class="small-2 large-4 columns"><h2>Admin</h2></div>		
+	</div>	
+
+	<div class="row" ng-controller="getCompanies">						
+		<div class="small-2 columns"><a href="#" class="button tiny" ng-click="toggleCompanies()">Companies</a></div>
+			<div ng-show="showCompanyDiv">		
+				<div class="small-3 columns"><p> Total number of companies : {{ companies.length }}</p></div>		
+					
+				<div class="small-3 columns">Search : <input ng-model="query"></div>
+				<div class="small-3 columns">Sort By : 
+					<select ng-model="orderBy">
+						<option value="name">Alphabetical</option>
+						<option value="enabled">Enabled</option>
+						<option value="id">Id</option>
+					</select>			
+				</div>
+				<div class="row"></div>
+				<div class="small-2 large-8 columns">
+					<table>
+						<thead>
+						    <tr>
+						      	<th>Company ID</th>
+						      	<th>Name</th>
+						      	<th>Enabled</th>			     
+						    </tr>
+					  	</thead>
+					  	<tbody>
+						    <tr ng-repeat="company in companies | filter:query | orderBy:orderBy">
+						    	<td><div class="small-1 large-4 columns">{{ company.id }}</div></td>
+						      	<td width="200"><div class="small-6 large-6 columns">{{ company.name }}</div></td>
+						      	<td><div class="small-1 large-4 columns">{{ company.enabled }}</div></td>
+						      	<td><a href="#" ng-click="deleteCompany(company.id)">X</a></td>	      
+						    </tr>			   			  
+					  	</tbody>
+					</table>
+				</div>	
+			</div>
+	</div>
+
+	<div class="row"><br></div>
+	<div class="row"><br></div>
+	<div class="row"><br></div>
+	<div class="row"><br></div>
+	<div class="row"><br></div>
+	<div class="row"><br></div>
+
+	<div class="row" ng-controller="createCompany">
+		<div class="small-5 columns"><b>Create new company</b></div>
+		<div class="row"><br></div>
+		<div class="small-2 large-4 columns">Name :<input type="text" ng-model="name"></div>
+		<div class="small-2 large-4 columns">Enabled :<input type="text" ng-model="enabled"></div>			
+		<button ng-click="createCompany()">Create Company</button>
+	</div>
+	<div class="row"><br></div>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>        
+    <script type="text/javascript" src="inventoryApp.js"></script>
+    <script type="text/javascript" src="adminservice.js"></script>
+    <script type="text/javascript" src="controllers.js"></script>    
+   
+</body>
+</html>
