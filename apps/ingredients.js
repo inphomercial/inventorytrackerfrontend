@@ -1,0 +1,1 @@
+var ingredientsApp = angular.module('Ingredients', []);

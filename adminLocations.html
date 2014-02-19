@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html ng-app="Locations">
+<head>
+    <title>Admin Inventory</title>
+
+    <!-- Included CSS Files, use foundation.css if you do not want minified code -->
+  	<link rel="stylesheet" href="foundation.css">
+</head>
+
+<body>
+
+	<div class="row">	
+		<div class="small-2 large-4 columns"><h2>Admin Locations</h2></div>		
+	</div>	
+	
+	<div class="row">
+		<div class="small-2 large-2 columns"><a href="adminCompanies.html" class="button tiny">Companies</a></div>
+		<div class="small-2 large-2 columns end"><a href="adminLocations.html" class="button tiny">Locations</a></div>
+	</div>
+
+	<div ng-controller="locationsController">
+		<div class="row">
+			<div class="small-6 columns">			
+				<p> Total number of locations : {{ locations.length }}</p>							
+				<input ng-model="query" placeholder="Search">
+				<br>
+				<table>
+					<thead>
+					    <tr>
+					      	<th>Id</th>							
+					      	<th>Name</th>
+					      	<th>Address</th>
+					      	<th>Phone</th>
+					      	<th>Created</th>
+					      	<th>Enabled</th>						      	
+					      	<th>CompanyID</th>
+					      	<th>Delete</th>		     
+					    </tr>
+				  	</thead>
+				  	<tbody>
+					    <tr ng-repeat="location in locations | filter:query | orderBy:orderBy">
+					    	<td><a href="#" ng-click="editLocation(location.id)">{{ location.id }}</a></td>					    	
+					      	<td>{{ location.name }}</td>
+					      	<td>{{ location.address }}</td>
+					      	<td>{{ location.phone }}</td>
+					      	<td>{{ location.created_at }}</td>
+					      	<td>{{ location.enabled }}</td>					      	
+					      	<td>{{ location.company_id }}</td>
+					      	<td><a href="#" ng-click="deleteLocation(location.id)">X</a></td>	      
+					    </tr>			   			  
+				  	</tbody>
+				</table>
+			</div>				
+			<div class="small-4 columns" ng-show="selected_location.name">				
+				<br>
+				<p>Update location</p>
+				<br>
+				<input type="text" ng-model="selected_location.name" value="{{ selected_location.name }}" >
+				<input type="text" ng-model="selected_location.address" value="{{ selected_location.address }}" >
+				<input type="text" ng-model="selected_location.phone" value="{{ selected_location.phone }}" >
+				<input type="text" ng-model="selected_location.enabled" value="{{ selected_location.enabled }}" >
+				<input type="text" ng-model="selected_location.company_id" value="{{ selected_location.company_id }}" >
+				<a href="#" class="button" ng-click="updateLocation()">Save</a>
+				<a href="#" class="button" ng-click="clearLocation()">Cancel</a>
+			</div>
+		</div>
+	</div>		
+	
+	<div class="row">
+		<div><br></div>
+	</div>
+
+	<div ng-controller="newLocationController">
+		<div class="row">
+			<div class="small-4 large-4 columns"><b>Create new location</b></div>
+		</div>
+		<div class="row">
+			<div class="small-3 large-4 columns">Name :<input type="text" ng-model="new_location_name"></div>					
+			<div class="small-3 large-4 columns">Address :<input type="text" ng-model="new_location_address"></div>
+			<div class="small-3 large-4 columns">Phone :<input type="text" ng-model="new_location_phone"></div>
+		</div>
+		<div class="row">
+			<div class="small-3 large-4 columns">Enabled :<input type="text" ng-model="new_location_enabled"></div>							
+			<div class="small-3 large-4 columns">Company Id :<input type="text" ng-model="new_location_company_id"></div>					
+			<div class="small-3 large-4 columns"><button ng-click="newLocation()">Create Location</button></div>
+		</div>
+	</div>
+
+	<div class="row"><br></div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>        
+    <script type="text/javascript" src="apps/companies.js"></script>
+    <script type="text/javascript" src="apps/locations.js"></script>
+    <script type="text/javascript" src="services/company_service.js"></script>
+    <script type="text/javascript" src="services/location_service.js"></script>
+    <script type="text/javascript" src="controllers/company_controller.js"></script>
+    <script type="text/javascript" src="controllers/location_controller.js"></script>
+   
+</body>
+</html>

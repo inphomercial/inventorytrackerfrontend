@@ -4,6 +4,78 @@
 		"selected_items":
 		[
 			[
+				"Inven",
+				"InventoryService"
+			],
+			[
+				"selected",
+				"selected_meal"
+			],
+			[
+				"update",
+				"updateMeal"
+			],
+			[
+				"se",
+				"selected_ingredient"
+			],
+			[
+				"upda",
+				"updateIngredient"
+			],
+			[
+				"select",
+				"selected_company"
+			],
+			[
+				"sel",
+				"selected_location"
+			],
+			[
+				"new",
+				"new_company_name"
+			],
+			[
+				"coma",
+				"companies"
+			],
+			[
+				"comp",
+				"CompanyService"
+			],
+			[
+				"Comp",
+				"CompanyService"
+			],
+			[
+				"c",
+				"companyToEdit"
+			],
+			[
+				"compa",
+				"companyToEdit"
+			],
+			[
+				"show",
+				"showCompanyDiv"
+			],
+			[
+				"Admin",
+				"admin"
+			],
+			[
+				"inventory",
+				"inventoryApp"
+			],
+			[
+				"get",
+				"getCompanies"
+			],
+			[
+				"inven",
+				"inventoryAppModule"
+			],
+			[
 				"In",
 				"IngredientController"
 			],
@@ -14,10 +86,6 @@
 			[
 				"company",
 				"company_id"
-			],
-			[
-				"Admin",
-				"AdminController"
 			],
 			[
 				"PA",
@@ -55,6 +123,126 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "userIndex.html",
+			"settings":
+			{
+				"buffer_size": 3390,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/company_controller.js",
+			"settings":
+			{
+				"buffer_size": 1163,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/inventory_controller.js",
+			"settings":
+			{
+				"buffer_size": 1187,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "services/location_service.js",
+			"settings":
+			{
+				"buffer_size": 2910,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "userIngredients.html",
+			"settings":
+			{
+				"buffer_size": 3460,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "userMeals.html",
+			"settings":
+			{
+				"buffer_size": 3015,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "userInventory.html",
+			"settings":
+			{
+				"buffer_size": 3186,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/ingredient_controller.js",
+			"settings":
+			{
+				"buffer_size": 1343,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/meal_controller.js",
+			"settings":
+			{
+				"buffer_size": 1062,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "services/ingredient_service.js",
+			"settings":
+			{
+				"buffer_size": 2888,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "services/inventory_service.js",
+			"settings":
+			{
+				"buffer_size": 2900,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "apps/inventories.js",
+			"settings":
+			{
+				"buffer_size": 53,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "services/meal_service.js",
+			"settings":
+			{
+				"buffer_size": 2548,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "apps/meals.js",
+			"settings":
+			{
+				"buffer_size": 42,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "apps/ingredients.js",
+			"settings":
+			{
+				"buffer_size": 55,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -83,6 +271,31 @@
 	},
 	"file_history":
 	[
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/apps/single_location.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/controllers/location_controller.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/services/location_service.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/apps/locations.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/services/company_service.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/adminCompanies.html",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/userIndex.html",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/apps/companies.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/controllers/company_controller.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/adminLocations.html",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/companies.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/locations.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/controllers.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/adminEditCompany.html",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/adminservice.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/company_service.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/index.html",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/inventorytrackerfrontend.sublime-project",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/inventoryApp.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/foundation.css",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/foundation.js",
+		"/Z/Downloads/foundation-5.1.1/css/foundation.css",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/main.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/services.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/app.js",
 		"/Z/Programs/wamp/www/chaning.php",
 		"/Z/Programs/wamp/www/inventorytracker/app/controllers/AdminController.php",
 		"/Z/Programs/wamp/www/inventorytracker/app/database/seeds/DatabaseSeeder.php",
@@ -129,13 +342,14 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -143,6 +357,56 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"measurement",
+			"ingredients",
+			"IngredientService",
+			"meal",
+			"companies",
+			"CompanyService",
+			"					\n",
+			"ingredients",
+			"IngredientService",
+			"selected_ingredient",
+			"IngredientService",
+			"selected_ingredient",
+			"new_ingredient_enabled",
+			"new_ingredient_name",
+			"newIngredient",
+			"IngredientService",
+			"ingredients",
+			"IngredientService",
+			"ingredients",
+			"IngredientService",
+			"ingredient",
+			"companies",
+			"CompanyService",
+			"selected_company",
+			"companies",
+			"CompanyService",
+			"new_company_name",
+			"companies",
+			"CompanyService",
+			"company",
+			"companies",
+			"selected_company",
+			"CompanyService",
+			"selected_company",
+			"companies",
+			"\n				",
+			"CompanyService",
+			"companies",
+			"CompanyService",
+			"company",
+			"companies",
+			"companiesController",
+			"Admin",
+			"p",
+			"company",
+			");\n",
+			"console.log",
+			"log",
+			"a",
+			"companies",
 			"Meal",
 			"meal",
 			"Meal",
@@ -184,8 +448,449 @@
 	"groups":
 	[
 		{
+			"selected": 7,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "userIndex.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3390,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1226,
+								1226
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "controllers/company_controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1163,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "controllers/inventory_controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1187,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207,
+								218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "services/location_service.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2910,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "userIngredients.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1765,
+								1765
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "userMeals.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3015,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								780,
+								780
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "userInventory.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1355,
+								1366
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "controllers/ingredient_controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1343,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								528,
+								528
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "controllers/meal_controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1062,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								564,
+								564
+							],
+							[
+								589,
+								589
+							],
+							[
+								738,
+								738
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "services/ingredient_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2888,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1984,
+								1984
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "services/inventory_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2900,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								255,
+								255
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "apps/inventories.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 53,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "services/meal_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2548,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								560,
+								560
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "apps/meals.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 42,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7,
+								7
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "apps/ingredients.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 55,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55,
+								55
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -240,11 +945,15 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"Z:\\Programs\\wamp\\www\\inventorytracker\\InventoryLaravelProject.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
@@ -261,7 +970,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 418.0,
+	"side_bar_width": 273.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

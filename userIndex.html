@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html ng-app="SingleLocation">
+<head>
+    <title>User Inventory</title>
+
+    <!-- Included CSS Files, use foundation.css if you do not want minified code -->
+  	<link rel="stylesheet" href="foundation.css">
+</head>
+
+<body>
+
+	<div class="row">	
+		<div class="small-2 large-4 columns"><h2>Location Main Page</h2></div>		
+	</div>	
+	
+	<div class="row">
+		<div class="small-1 large-1 columns"><a href="userInventory.html" class="button tiny">Inventory</a></div>
+		<div class="small-1 large-1 columns"><a href="userMeals.html" class="button tiny">Meals</a></div>
+		<div class="small-1 large-1 columns"><a href="userIngredients.html" class="button tiny">Ingredients</a></div>
+		<div class="small-1 large-1 columns end"><a href="userIndex.html" class="button tiny">Location</a></div>		
+	</div>
+
+	<div ng-controller="companiesController">
+		<div class="row">
+			<div class="small-6 columns">			
+				<p> Total number of companies : {{ companies.length }}</p>							
+				<input ng-model="query" placeholder="Search">
+				<br>
+				<table>
+					<thead>
+					    <tr>
+					      	<th>Id</th>
+					      	<th>Name</th>
+					      	<th>Created</th>
+					      	<th>Enabled</th>						      	
+					      	<th>Delete</th>		     
+					    </tr>
+				  	</thead>
+				  	<tbody>
+					    <tr ng-repeat="company in companies | filter:query | orderBy:orderBy">
+					    	<td><a href="#" ng-click="editCompany(company.id)">{{ company.id }}</a></td>
+					      	<td>{{ company.name }}</td>
+					      	<td>{{ company.created_at }}</td>
+					      	<td>{{ company.enabled }}</td>					      	
+					      	<td><a href="#" ng-click="deleteCompany(company.id)">X</a></td>	      
+					    </tr>			   			  
+				  	</tbody>
+				</table>
+			</div>				
+			<div class="small-6 columns" ng-show="selected_company.name">				
+				<br>
+				<p>Update company</p>
+				<br>
+				<input type="text" ng-model="selected_company.name" value="{{ selected_company.name }}" >
+				<input type="text" ng-model="selected_company.enabled" value="{{ selected_company.enabled }}" >
+				<a href="#" class="button" ng-click="updateCompany()">Save</a>
+				<a href="#" class="button" ng-click="clearCompany()">Cancel</a>
+			</div>
+		</div>
+	</div>		
+
+	<div class="row">
+		<div><br></div>
+	</div>
+
+	<div ng-controller="newCompanyController">
+		<div class="row">
+			<div class="small-4 large-4 columns"><b>Create new company</b></div>
+		</div>
+		<div class="row">
+			<div class="small-3 large-4 columns">Name :<input type="text" ng-model="new_company_name"></div>
+			<div class="small-3 large-4 columns">Enabled :<input type="text" ng-model="new_company_enabled"></div>			
+			<div class="small-3 large-4 columns"><button ng-click="newCompany()">Create Company</button></div>
+		</div>
+	</div>
+	<div class="row"><br></div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>        
+    <script type="text/javascript" src="apps/companies.js"></script>
+    <script type="text/javascript" src="apps/locations.js"></script>
+    <script type="text/javascript" src="services/company_service.js"></script>
+    <script type="text/javascript" src="services/location_service.js"></script>
+    <script type="text/javascript" src="controllers/company_controller.js"></script>
+    <script type="text/javascript" src="controllers/location_controller.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html ng-app="Meals">
+<head>
+    <title>User Inventory</title>
+
+    <!-- Included CSS Files, use foundation.css if you do not want minified code -->
+  	<link rel="stylesheet" href="foundation.css">
+</head>
+
+<body>
+
+	<div class="row">	
+		<div class="small-2 large-4 columns"><h2>Meals</h2></div>		
+	</div>	
+	
+	<div class="row">
+		<div class="small-1 large-1 columns"><a href="userInventory.html" class="button tiny">Inventory</a></div>
+		<div class="small-1 large-1 columns"><a href="userMeals.html" class="button tiny">Meals</a></div>
+		<div class="small-1 large-1 columns"><a href="userIngredients.html" class="button tiny">Ingredients</a></div>
+		<div class="small-1 large-1 columns end"><a href="userIndex.html" class="button tiny">Location</a></div>		
+	</div>
+
+	<div ng-controller="mealsController">
+		<div class="row">
+			<div class="small-6 columns">			
+				<p> Total number of meals : {{ meals.length }}</p>							
+				<input ng-model="query" placeholder="Search">
+				<br>
+				<table>
+					<thead>
+					    <tr>
+					      	<th>Id</th>
+					      	<th>Name</th>					      					      
+					      	<th>Enabled</th>						      	
+					      	<th>Delete</th>		     
+					    </tr>
+				  	</thead>
+				  	<tbody>
+					    <tr ng-repeat="meal in meals | filter:query | orderBy:orderBy">
+					    	<td><a href="#" ng-click="editMeal(meal.id)">{{ meal.id }}</a></td>
+					      	<td>{{ meal.name }}</td>					      	
+					      	<td>{{ meal.enabled }}</td>					      	
+					      	<td><a href="#" ng-click="deleteMeal(meal.id)">X</a></td>	      
+					    </tr>			   			  
+				  	</tbody>
+				</table>
+			</div>				
+			<div class="small-6 columns" ng-show="selected_meal.name">				
+				<br>
+				<p>Update Meal</p>
+				<br>
+				<input type="text" ng-model="selected_meal.name" value="{{ selected_meal.name }}" >				
+				<input type="text" ng-model="selected_meal.enabled" value="{{ selected_meal.enabled }}" >
+				<a href="#" class="button" ng-click="updateMeal()">Save</a>
+				<a href="#" class="button" ng-click="clearMeal()">Cancel</a>
+			</div>
+		</div>
+	</div>		
+
+	<div class="row">
+		<div><br></div>
+	</div>
+
+	<div ng-controller="newMealController">
+		<div class="row">
+			<div class="small-4 large-4 columns"><b>Create new Meal</b></div>
+		</div>
+		<div class="row">
+			<div class="small-3 large-4 columns">Name :<input type="text" ng-model="new_meal_name"></div>			
+			<div class="small-3 large-4 columns">Enabled :<input type="text" ng-model="new_meal_enabled"></div>			
+			<div class="small-3 large-4 columns"><button ng-click="newMeal()">Create Meal</button></div>
+		</div>
+	</div>
+	<div class="row"><br></div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>        
+    <script type="text/javascript" src="apps/meals.js"></script>
+    <script type="text/javascript" src="services/meal_service.js"></script>    
+    <script type="text/javascript" src="controllers/meal_controller.js"></script>    
+   
+</body>
+</html>

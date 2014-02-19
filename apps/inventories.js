@@ -1,0 +1,1 @@
+var inventoryApp = angular.module('Inventories', []);
