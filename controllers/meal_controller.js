@@ -37,6 +37,18 @@ mealApp.controller('mealsController', function ($scope, MealService)
 	}
 });
 
+mealApp.controller('mealIngredientController', function ($scope, IngredientService)
+{
+	$scope.available_ingredients = {};
+
+	// Get all companies on load
+	var request = IngredientService.getIngredients();
+	request.then(function(res) {		
+		$scope.available_ingredients = IngredientService.ingredients;
+	})
+
+});
+
 mealApp.controller('newMealController', function ($scope, MealService)
 {
 	$scope.newMeal = function()
