@@ -9,10 +9,12 @@ mealApp.controller('mealsController', function ($scope, MealService)
 	
 	$scope.selected_meal = {};
 
+	// Grabs the specific meal from the db by id and saves it to select_meal
 	$scope.editMeal = function(id)
 	{	
 		var request = MealService.getMealById(id);		
-		request.then(function(res) {			
+		request.then(function(res) {
+			console.log(res.data);
 			$scope.selected_meal = res.data;
 		})
 
@@ -23,7 +25,7 @@ mealApp.controller('mealsController', function ($scope, MealService)
 		MealService.deleteMeal(id);
 	};
 
-	
+	// Writes the new updates to the database
 	$scope.updateMeal = function()
 	{
 		MealService.updateMeal($scope.selected_meal);

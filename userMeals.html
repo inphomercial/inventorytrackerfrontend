@@ -45,56 +45,95 @@
 					    </tr>			   			  
 				  	</tbody>
 				</table>
-			</div>				
+			</div>	
 			<div class="small-6 columns" ng-show="selected_meal.name">				
-				<br>
-				<p>Update Meal</p>
-				<br>
-				<input type="text" ng-model="selected_meal.name" value="{{ selected_meal.name }}" >				
-				<input type="text" ng-model="selected_meal.enabled" value="{{ selected_meal.enabled }}" >
-				<a href="#" class="button" ng-click="updateMeal()">Save</a>
-				<a href="#" class="button" ng-click="clearMeal()">Cancel</a>
+				
+				<div class="row">
+					<p>Update Meal {{ selected_meal.name }}</p>
+				</div>
+				
+				<div class="row">
+					<input type="text" ng-model="selected_meal.name" value="{{ selected_meal.name }}" >				
+					<input type="text" ng-model="selected_meal.enabled" value="{{ selected_meal.enabled }}">
+				</div>
+				
+				<div class="row">
+					<div class="small-6 columns">Current Ingredients
+						<table>
+							<thead>
+							    <tr>
+							      	<th>Name</th>	
+							      	<th>Amount</th>				      					          
+							    </tr>
+						  	</thead>
+						  	<tbody>
+							    <tr ng-repeat="ingredient in selected_meal.ingredients | filter:query | orderBy:orderBy">
+							      	<td ng-click="pushToAvailableIngredients(ingredient.name, ingredient)">{{ ingredient.name }}</td>
+							      	<td>{{ ingredient.amount }}</td>
+							    </tr>			   		
+						  	</tbody>
+						</table>
+					</div>
+					<div class="small-6 columns">Available Ingredients
+						<table>
+							<thead>
+							    <tr>
+							      	<th>Name</th>					      					      	     
+							      	<th>Amount</th>
+							    </tr>
+						  	</thead>
+						  	<tbody>			  		
+							     <tr ng-repeat="ingredient in available_ingredients.ingredients | filter:query | orderBy:orderBy">				     
+							      	<td ng-click="pushToCurrentIngredients(ingredient.name, ingredient)">{{ ingredient.name }}</td>
+							      	<td>{{ ingredient.amount }}</td>					      	      
+							    </tr>			   			   
+						  	</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<a href="#" class="button" ng-click="updateMeal()">Save</a>
+					<a href="#" class="button" ng-click="clearMeal()">Cancel</a>
+				</div>
 			</div>
 		</div>
 	</div>		
 
 	<div class="row">
-		<div><br></div>
-	</div>
-
-	<div ng-controller="mealIngredientController">
-		<div class="row">
-		<div class="small-6 columns">Current Ingredients
-			<table>
-				<thead>
-				    <tr>
-				      	<th>Name</th>	
-				      	<th>Amount</th>				      					          
-				    </tr>
-			  	</thead>
-			  	<tbody>
-				    <tr ng-repeat="ingredient in current_ingredients.ingredients | filter:query | orderBy:orderBy" ng-click="pushToAvailableIngredients(ingredient.name, ingredient)">
-				      	<td>{{ ingredient.name }}</td>
-				      	<td>{{ ingredient.amount }}</td>
-				    </tr>			   		
-			  	</tbody>
-			</table>
-		</div>
-		<div class="small-6 columns">Available Ingredients
-			<table>
-				<thead>
-				    <tr>
-				      	<th>Name</th>					      					      	     
-				      	<th>Amount</th>
-				    </tr>
-			  	</thead>
-			  	<tbody>			  		
-				     <tr ng-repeat="ingredient in available_ingredients.ingredients | filter:query | orderBy:orderBy" ng-click="pushToCurrentIngredients(ingredient.name, ingredient)">				     
-				      	<td>{{ ingredient.name }}</td>
-				      	<td>{{ ingredient.amount }}</td>					      	      
-				    </tr>			   			   
-			  	</tbody>
-			</table>
+		<div ng-controller="mealIngredientController">		
+			<div class="small-6 columns">Current Ingredients
+				<table>
+					<thead>
+					    <tr>
+					      	<th>Name</th>	
+					      	<th>Amount</th>				      					          
+					    </tr>
+				  	</thead>
+				  	<tbody>
+					    <tr ng-repeat="ingredient in current_ingredients.ingredients | filter:query | orderBy:orderBy">
+					      	<td ng-click="pushToAvailableIngredients(ingredient.name, ingredient)">{{ ingredient.name }}</td>
+					      	<td><input type="text" value="{{ ingredient.amount }}"</td>					      	      
+					    </tr>			   		
+				  	</tbody>
+				</table>
+			</div>
+			<div class="small-6 columns">Available Ingredients
+				<table>
+					<thead>
+					    <tr>
+					      	<th>Name</th>					      					      	     
+					      	<th>Amount</th>
+					    </tr>
+				  	</thead>
+				  	<tbody>			  		
+					     <tr ng-repeat="ingredient in available_ingredients.ingredients | filter:query | orderBy:orderBy">				     
+					      	<td ng-click="pushToCurrentIngredients(ingredient.name, ingredient)">{{ ingredient.name }}</td>
+					      	<td><input type="text" value="{{ ingredient.amount }}"</td>					      	      
+					    </tr>			   			   
+				  	</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 

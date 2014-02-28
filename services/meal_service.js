@@ -30,6 +30,21 @@ mealApp.factory('MealService', function ($http)
 		
 		getMealById: function(id)
 		{
+			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + id + "/ingredients?key=loc2";
+
+			return $http.get(url)
+				.success(function (response) {		
+					console.log(response);
+					return response;
+				})
+				.error(function (data, status) {
+					alert("Error" + status);
+				});				
+		},
+
+		/*// Working
+		getMealById: function(id)
+		{
 			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + id + "?key=loc2";
 
 			return $http.get(url)
@@ -39,7 +54,7 @@ mealApp.factory('MealService', function ($http)
 				.error(function (data, status) {
 					alert("Error" + status);
 				});				
-		},
+		},*/
 
 		getMeals: function() 
 		{
@@ -122,10 +137,11 @@ mealApp.factory('MealService', function ($http)
 				.error(function( data, status, headers, config) {
 					alert("Error" + status);
 				});
-
 		},
 		
 		updateMeal: function(selected_meal) {
+
+			console.log(selected_meal);
 
 			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + selected_meal.id + "?key=loc2";		
 
