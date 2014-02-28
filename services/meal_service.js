@@ -63,8 +63,7 @@ mealApp.factory('MealService', function ($http)
 		addIngredientToCurrent: function (name, ingredient)
 		{			
 			for(var i=0; i < MealService.available_ingredients.ingredients.length; i++)
-			{				
-				console.log(MealService.available_ingredients.ingredients[i].name);
+			{						
 				if(MealService.available_ingredients.ingredients[i].name == name)
 				{
 					MealService.available_ingredients.ingredients.splice(i, 1);

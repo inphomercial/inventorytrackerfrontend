@@ -73,7 +73,7 @@
 				    </tr>
 			  	</thead>
 			  	<tbody>
-				    <tr ng-repeat="ingredient in current_ingredients.ingredients | filter:query | orderBy:orderBy">
+				    <tr ng-repeat="ingredient in current_ingredients.ingredients | filter:query | orderBy:orderBy" ng-click="pushToAvailableIngredients(ingredient.name, ingredient)">
 				      	<td>{{ ingredient.name }}</td>
 				      	<td>{{ ingredient.amount }}</td>
 				    </tr>			   		

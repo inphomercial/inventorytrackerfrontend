@@ -41,14 +41,15 @@ mealApp.controller('mealIngredientController', function ($scope, MealService)
 {	
 	$scope.available_ingredients = MealService.available_ingredients;
 	$scope.current_ingredients = MealService.current_ingredients;
-
+	
 	$scope.pushToCurrentIngredients = function (name, ingredient)
 	{		
 		MealService.addIngredientToCurrent(name, ingredient);
-		MealService.addIngredientToAvailable(name, ingredient);
+	}
 
-		$scope.available_ingredients = MealService.available_ingredients;
-		$scope.available_ingredients = MealService.current_ingredients;
+	$scope.pushToAvailableIngredients = function (name, ingredient)
+	{		
+		MealService.addIngredientToAvailable(name, ingredient);
 	}
 
 	/*// Get all companies on load
