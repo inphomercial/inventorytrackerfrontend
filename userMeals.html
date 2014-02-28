@@ -68,13 +68,15 @@
 			<table>
 				<thead>
 				    <tr>
-				      	<th>Name</th>					      					          
+				      	<th>Name</th>	
+				      	<th>Amount</th>				      					          
 				    </tr>
 			  	</thead>
 			  	<tbody>
-				    <tr ng-repeat="meal in meals | filter:query | orderBy:orderBy">
-				      	<td>{{ meal.name }}</td>					      	      
-				    </tr>			   			  
+				    <tr ng-repeat="ingredient in current_ingredients.ingredients | filter:query | orderBy:orderBy">
+				      	<td>{{ ingredient.name }}</td>
+				      	<td>{{ ingredient.amount }}</td>
+				    </tr>			   		
 			  	</tbody>
 			</table>
 		</div>
@@ -83,12 +85,14 @@
 				<thead>
 				    <tr>
 				      	<th>Name</th>					      					      	     
+				      	<th>Amount</th>
 				    </tr>
 			  	</thead>
-			  	<tbody>
-				    <tr ng-repeat="avilable_ingredient in avilable_ingredients | filter:query | orderBy:orderBy">
-				      	<td>{{ avilable_ingredient.name }}</td>					      	      
-				    </tr>			   			  
+			  	<tbody>			  		
+				     <tr ng-repeat="ingredient in available_ingredients.ingredients | filter:query | orderBy:orderBy" ng-click="pushToCurrentIngredients(ingredient.name, ingredient)">				     
+				      	<td>{{ ingredient.name }}</td>
+				      	<td>{{ ingredient.amount }}</td>					      	      
+				    </tr>			   			   
 			  	</tbody>
 			</table>
 		</div>
@@ -107,9 +111,13 @@
 	<div class="row"><br></div>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>        
-    <script type="text/javascript" src="apps/meals.js"></script>
-    <script type="text/javascript" src="services/meal_service.js"></script>    
-    <script type="text/javascript" src="controllers/meal_controller.js"></script>    
+    <script type="text/javascript" src="apps/meals.js"></script>    
+    <script type="text/javascript" src="apps/ingredients.js"></script>
+    <script type="text/javascript" src="services/ingredient_service.js"></script>
+    <script type="text/javascript" src="controllers/ingredient_controller.js"></script>    
+    <script type="text/javascript" src="services/meal_service.js"></script>            
+    <script type="text/javascript" src="controllers/meal_controller.js"></script>           
+    
    
 </body>
 </html>

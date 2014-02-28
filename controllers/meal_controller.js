@@ -37,15 +37,25 @@ mealApp.controller('mealsController', function ($scope, MealService)
 	}
 });
 
-mealApp.controller('mealIngredientController', function ($scope, IngredientService)
-{
-	$scope.available_ingredients = {};
+mealApp.controller('mealIngredientController', function ($scope, MealService)
+{	
+	$scope.available_ingredients = MealService.available_ingredients;
+	$scope.current_ingredients = MealService.current_ingredients;
 
-	// Get all companies on load
+	$scope.pushToCurrentIngredients = function (name, ingredient)
+	{		
+		MealService.addIngredientToCurrent(name, ingredient);
+		MealService.addIngredientToAvailable(name, ingredient);
+
+		$scope.available_ingredients = MealService.available_ingredients;
+		$scope.available_ingredients = MealService.current_ingredients;
+	}
+
+	/*// Get all companies on load
 	var request = IngredientService.getIngredients();
 	request.then(function(res) {		
 		$scope.available_ingredients = IngredientService.ingredients;
-	})
+	})*/
 
 });
 

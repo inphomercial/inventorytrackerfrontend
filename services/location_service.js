@@ -1,4 +1,4 @@
-locationApp.factory('LocationService', function($http) 
+locationApp.factory('LocationService', function ($http) 
 {	
 	var LocationService = {
 

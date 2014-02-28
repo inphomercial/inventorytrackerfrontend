@@ -1,8 +1,32 @@
-mealApp.factory('MealService', function($http) 
+mealApp.factory('MealService', function ($http) 
 {	
 	var MealService = {
 
 		meals: [],
+
+		available_ingredients: {			
+			ingredients: [
+			{
+				name: 'salt',
+				amount: 1,				
+			},
+			{
+				name: 'pepper',
+				amount: 'dash'
+			}]
+		},
+
+		current_ingredients: {			
+			ingredients: [
+			{
+				name: 'cheese',
+				amount: 'cup',				
+			},
+			{
+				name: 'water',
+				amount: 'liter',
+			}]
+		},
 		
 		getMealById: function(id)
 		{
@@ -36,6 +60,32 @@ mealApp.factory('MealService', function($http)
 				});			
 		},
 
+		addIngredientToCurrent: function (name, ingredient)
+		{			
+			for(var i=0; i < MealService.available_ingredients.ingredients.length; i++)
+			{				
+				console.log(MealService.available_ingredients.ingredients[i].name);
+				if(MealService.available_ingredients.ingredients[i].name == name)
+				{
+					MealService.available_ingredients.ingredients.splice(i, 1);
+				}							
+			}		
+
+			MealService.current_ingredients.ingredients.push(ingredient);									
+		},
+
+		addIngredientToAvailable: function (name, ingredient)
+		{			
+			for(var i=0; i < MealService.current_ingredients.ingredients.length; i++)
+			{				
+				if(MealService.current_ingredients.ingredients[i].name == name)
+				{
+					MealService.current_ingredients.ingredients.splice(i, 1);
+				}							
+			}				
+
+			MealService.available_ingredients.ingredients.push(ingredient);																
+		},
 	
 		deleteMeal: function(id) 
 		{

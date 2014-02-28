@@ -1,4 +1,4 @@
-inventoryApp.factory('InventoryService', function($http) 
+inventoryApp.factory('InventoryService', function ($http) 
 {	
 	var InventoryService = {
 

@@ -1,4 +1,4 @@
-ingredientsApp.factory('IngredientService', function($http) 
+ingredientsApp.factory('IngredientService', function ($http) 
 {	
 	var IngredientService = {
 
