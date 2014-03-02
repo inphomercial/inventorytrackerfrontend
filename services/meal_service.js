@@ -1,32 +1,10 @@
-mealApp.factory('MealService', function ($http) 
+inventoryApp.factory('MealService', function ($http) 
 {	
 	var MealService = {
 
-		meals: [],
-
-		available_ingredients: {			
-			ingredients: [
-			{
-				name: 'salt',
-				amount: 1,				
-			},
-			{
-				name: 'pepper',
-				amount: 'dash'
-			}]
-		},
-
-		current_ingredients: {			
-			ingredients: [
-			{
-				name: 'cheese',
-				amount: 'cup',				
-			},
-			{
-				name: 'water',
-				amount: 'liter',
-			}]
-		},
+		meals: [], 
+		//available_ingredients: [],
+		//current_ingredients: [],
 		
 		getMealById: function(id)
 		{
@@ -34,27 +12,12 @@ mealApp.factory('MealService', function ($http)
 
 			return $http.get(url)
 				.success(function (response) {		
-					console.log(response);
 					return response;
 				})
 				.error(function (data, status) {
 					alert("Error" + status);
 				});				
 		},
-
-		/*// Working
-		getMealById: function(id)
-		{
-			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + id + "?key=loc2";
-
-			return $http.get(url)
-				.success(function (response) {		
-					return response;
-				})
-				.error(function (data, status) {
-					alert("Error" + status);
-				});				
-		},*/
 
 		getMeals: function() 
 		{
@@ -73,32 +36,6 @@ mealApp.factory('MealService', function ($http)
 				.error(function (data, status) {
 					alert("Error" + status);
 				});			
-		},
-
-		addIngredientToCurrent: function (name, ingredient)
-		{			
-			for(var i=0; i < MealService.available_ingredients.ingredients.length; i++)
-			{						
-				if(MealService.available_ingredients.ingredients[i].name == name)
-				{
-					MealService.available_ingredients.ingredients.splice(i, 1);
-				}							
-			}		
-
-			MealService.current_ingredients.ingredients.push(ingredient);									
-		},
-
-		addIngredientToAvailable: function (name, ingredient)
-		{			
-			for(var i=0; i < MealService.current_ingredients.ingredients.length; i++)
-			{				
-				if(MealService.current_ingredients.ingredients[i].name == name)
-				{
-					MealService.current_ingredients.ingredients.splice(i, 1);
-				}							
-			}				
-
-			MealService.available_ingredients.ingredients.push(ingredient);																
 		},
 	
 		deleteMeal: function(id) 
@@ -122,7 +59,6 @@ mealApp.factory('MealService', function ($http)
 					alert("Error" + status);
 				});			
 		},
-	
 		
 		// Create a new ingredient based on $key for location_id
 		newMeal: function(newMeal) {
@@ -140,8 +76,6 @@ mealApp.factory('MealService', function ($http)
 		},
 		
 		updateMeal: function(selected_meal) {
-
-			console.log(selected_meal);
 
 			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + selected_meal.id + "?key=loc2";		
 
@@ -164,6 +98,46 @@ mealApp.factory('MealService', function ($http)
 					alert("Error" + status);
 				});			
 		}
+
+		/*	addIngredientToCurrent: function (name, ingredient)
+		{			
+			for(var i=0; i < MealService.available_ingredients.ingredients.length; i++)
+			{						
+				if(MealService.available_ingredients.ingredients[i].name == name)
+				{
+					MealService.available_ingredients.ingredients.splice(i, 1);
+				}							
+			}		
+
+			MealService.current_ingredients.ingredients.push(ingredient);									
+		},
+
+		addIngredientToAvailable: function (name, ingredient)
+		{			
+			for(var i=0; i < MealService.current_ingredients.ingredients.length; i++)
+			{				
+				if(MealService.current_ingredients.ingredients[i].name == name)
+				{
+					MealService.current_ingredients.ingredients.splice(i, 1);
+				}							
+			}				
+
+			MealService.available_ingredients.ingredients.push(ingredient);																
+		},*/
+
+		/*// Working
+		getMealById: function(id)
+		{
+			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + id + "?key=loc2";
+
+			return $http.get(url)
+				.success(function (response) {		
+					return response;
+				})
+				.error(function (data, status) {
+					alert("Error" + status);
+				});				
+		},*/
 	};
 
 	return MealService;

@@ -1,4 +1,4 @@
-ingredientsApp.factory('IngredientService', function ($http) 
+inventoryApp.factory('IngredientService', function ($http) 
 {	
 	var IngredientService = {
 
@@ -15,6 +15,38 @@ ingredientsApp.factory('IngredientService', function ($http)
 				.error(function (data, status) {
 					alert("Error" + status);
 				});				
+		},
+
+		removeIngredientFromMeal: function(meal_id, ingredient_id)
+		{
+			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + meal_id + "/ingredients/" + ingredient_id + "?key=loc2";
+
+			return $http.delete(url)
+				.success(function (response) {
+					return true;
+				})
+				.error(function (data, status) {
+					alert("Error" + status);
+				});				
+		},
+
+		addIngredientToMeal: function(meal_id, ingredient_id, amount)
+		{
+			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + meal_id + "/ingredients?key=loc2";
+			
+			var data = {
+				'meal_id': meal_id,
+				'ingredient_id': ingredient_id,
+				'amount': amount 
+			};
+
+			return $http.put(url, data)
+				.success(function (response) {			
+					return true;
+				})
+				.error(function (data, status) {
+					alert("Error" + status);
+				});			
 		},
 
 		getIngredients: function() 

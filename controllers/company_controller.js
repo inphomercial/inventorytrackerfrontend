@@ -1,5 +1,5 @@
 
-companyApp.controller('companiesController', function ($scope, CompanyService) 
+inventoryApp.controller('companiesController', function ($scope, CompanyService) 
 {	
 	// Get all companies on load
 	var request = CompanyService.getCompanies();
@@ -35,7 +35,7 @@ companyApp.controller('companiesController', function ($scope, CompanyService)
 	}
 });
 
-companyApp.controller('newCompanyController', function ($scope, CompanyService)
+inventoryApp.controller('newCompanyController', function ($scope, CompanyService)
 {
 	$scope.newCompany = function()
 	{		

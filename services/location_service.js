@@ -1,4 +1,4 @@
-locationApp.factory('LocationService', function ($http) 
+inventoryApp.factory('LocationService', function ($http) 
 {	
 	var LocationService = {
 

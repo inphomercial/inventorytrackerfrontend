@@ -1,5 +1,5 @@
 
-ingredientsApp.controller('ingredientsController', function ($scope, IngredientService) 
+inventoryApp.controller('ingredientsController', function ($scope, IngredientService) 
 {	
 	// Get all companies on load
 	var request = IngredientService.getIngredients();
@@ -37,7 +37,7 @@ ingredientsApp.controller('ingredientsController', function ($scope, IngredientS
 	}
 });
 
-ingredientsApp.controller('newIngredientController', function ($scope, IngredientService)
+inventoryApp.controller('newIngredientController', function ($scope, IngredientService)
 {
 	$scope.newIngredient = function()
 	{		

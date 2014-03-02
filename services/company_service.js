@@ -1,4 +1,4 @@
-companyApp.factory('CompanyService', function($http) 
+inventoryApp.factory('CompanyService', function($http) 
 {	
 	var CompanyService = {
 

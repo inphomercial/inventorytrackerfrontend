@@ -1,5 +1,5 @@
 
-locationApp.controller('locationsController', function ($scope, LocationService) 
+inventoryApp.controller('locationsController', function ($scope, LocationService) 
 {		
 	// Get all locations on load
 	var request = LocationService.getLocations();
@@ -40,7 +40,7 @@ locationApp.controller('locationsController', function ($scope, LocationService)
 	}
 });
 
-locationApp.controller('newLocationController', function ($scope, LocationService)
+inventoryApp.controller('newLocationController', function ($scope, LocationService)
 {
 	$scope.newLocation = function()
 	{				

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html ng-app="Meals">
+<html ng-app="Inventories">
 <head>
     <title>User Inventory</title>
 
@@ -11,7 +11,7 @@
 <body>
 
 	<div class="row">	
-		<div class="small-2 large-4 columns"><h2>Meals</h2></div>		
+		<div class="small-2 large-4 columns"><h2>Meals</h2></div>
 	</div>	
 	
 	<div class="row">
@@ -46,10 +46,10 @@
 				  	</tbody>
 				</table>
 			</div>	
-			<div class="small-6 columns" ng-show="selected_meal.name">				
-				
+
+			<div class="small-6 columns" ng-show="selected_meal.name">							
 				<div class="row">
-					<p>Update Meal {{ selected_meal.name }}</p>
+					<p><b>Update Meal</b> {{ selected_meal.name }}</p>
 				</div>
 				
 				<div class="row">
@@ -63,13 +63,15 @@
 							<thead>
 							    <tr>
 							      	<th>Name</th>	
-							      	<th>Amount</th>				      					          
+							      	<th>Amount</th>
+							      	<th>Unit</th>				      					          
 							    </tr>
 						  	</thead>
 						  	<tbody>
 							    <tr ng-repeat="ingredient in selected_meal.ingredients | filter:query | orderBy:orderBy">
-							      	<td ng-click="pushToAvailableIngredients(ingredient.name, ingredient)">{{ ingredient.name }}</td>
-							      	<td>{{ ingredient.amount }}</td>
+							      	<td ng-click="pushToAvailableIngredients(selected_meal.id, ingredient.ingredient_id)">{{ ingredient.name }}</td>
+							      	<td><input type="text" value="{{ ingredient.amount }}" ng-blur="updateIngredientAmount(selected_meal.id, ingredient.ingredient_id, ingredient.amount)"></td>
+							      	<td>{{ ingredient.unit }}</td>
 							    </tr>			   		
 						  	</tbody>
 						</table>
@@ -79,13 +81,13 @@
 							<thead>
 							    <tr>
 							      	<th>Name</th>					      					      	     
-							      	<th>Amount</th>
+							      	<th>Unit</th>
 							    </tr>
 						  	</thead>
-						  	<tbody>			  		
-							     <tr ng-repeat="ingredient in available_ingredients.ingredients | filter:query | orderBy:orderBy">				     
-							      	<td ng-click="pushToCurrentIngredients(ingredient.name, ingredient)">{{ ingredient.name }}</td>
-							      	<td>{{ ingredient.amount }}</td>					      	      
+						  	<tbody>			 		
+							     <tr ng-repeat="ingredient in available_ingredients | filter:query | orderBy:orderBy">
+							      	<td ng-click="pushToCurrentIngredients(selected_meal.id, ingredient.id, 2)">{{ ingredient.name }}</td>
+							      	<td>{{ ingredient.unit }}</td>					      	      
 							    </tr>			   			   
 						  	</tbody>
 						</table>
@@ -93,48 +95,15 @@
 				</div>
 
 				<div class="row">
-					<a href="#" class="button" ng-click="updateMeal()">Save</a>
-					<a href="#" class="button" ng-click="clearMeal()">Cancel</a>
+					<a href="#" class="button tiny" ng-click="updateMeal()">Save</a>
+					<a href="#" class="button tiny" ng-click="clearMeal()">Cancel</a>
 				</div>
 			</div>
 		</div>
 	</div>		
 
 	<div class="row">
-		<div ng-controller="mealIngredientController">		
-			<div class="small-6 columns">Current Ingredients
-				<table>
-					<thead>
-					    <tr>
-					      	<th>Name</th>	
-					      	<th>Amount</th>				      					          
-					    </tr>
-				  	</thead>
-				  	<tbody>
-					    <tr ng-repeat="ingredient in current_ingredients.ingredients | filter:query | orderBy:orderBy">
-					      	<td ng-click="pushToAvailableIngredients(ingredient.name, ingredient)">{{ ingredient.name }}</td>
-					      	<td><input type="text" value="{{ ingredient.amount }}"</td>					      	      
-					    </tr>			   		
-				  	</tbody>
-				</table>
-			</div>
-			<div class="small-6 columns">Available Ingredients
-				<table>
-					<thead>
-					    <tr>
-					      	<th>Name</th>					      					      	     
-					      	<th>Amount</th>
-					    </tr>
-				  	</thead>
-				  	<tbody>			  		
-					     <tr ng-repeat="ingredient in available_ingredients.ingredients | filter:query | orderBy:orderBy">				     
-					      	<td ng-click="pushToCurrentIngredients(ingredient.name, ingredient)">{{ ingredient.name }}</td>
-					      	<td><input type="text" value="{{ ingredient.amount }}"</td>					      	      
-					    </tr>			   			   
-				  	</tbody>
-				</table>
-			</div>
-		</div>
+		<br><br>
 	</div>
 
 	<div ng-controller="newMealController">
@@ -147,16 +116,15 @@
 			<div class="small-3 large-4 columns"><button ng-click="newMeal()">Create Meal</button></div>
 		</div>
 	</div>
-	<div class="row"><br></div>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>        
-    <script type="text/javascript" src="apps/meals.js"></script>    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>  
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.js"></script>   
+    <script type="text/javascript" src="apps/inventories.js"></script>  
     <script type="text/javascript" src="apps/ingredients.js"></script>
     <script type="text/javascript" src="services/ingredient_service.js"></script>
     <script type="text/javascript" src="controllers/ingredient_controller.js"></script>    
     <script type="text/javascript" src="services/meal_service.js"></script>            
-    <script type="text/javascript" src="controllers/meal_controller.js"></script>           
-    
+    <script type="text/javascript" src="controllers/meal_controller.js"></script>            
    
 </body>
 </html>

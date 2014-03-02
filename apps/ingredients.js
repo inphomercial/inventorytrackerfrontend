@@ -1,1 +1,1 @@
-var ingredientsApp = angular.module('Ingredients', []);
+//var ingredientsApp = angular.module('Ingredients', []);

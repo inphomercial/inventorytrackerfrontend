@@ -1,1 +1,1 @@
-var mealApp = angular.module('Meals', []);
+//var mealApp = angular.module('Meals', []);
