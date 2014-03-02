@@ -1,23 +1,7 @@
-<!DOCTYPE html>
 
-<html ng-app="Locations">
-<head>
-    <title>Admin Inventory</title>
-
-    <!-- Included CSS Files, use foundation.css if you do not want minified code -->
-  	<link rel="stylesheet" href="foundation.css">
-</head>
-
-<body>
-
-	<div class="row">	
-		<div class="small-2 large-4 columns"><h2>Admin Locations</h2></div>		
-	</div>	
-	
-	<div class="row">
-		<div class="small-2 large-2 columns"><a href="adminCompanies.html" class="button tiny">Companies</a></div>
-		<div class="small-2 large-2 columns end"><a href="adminLocations.html" class="button tiny">Locations</a></div>
-	</div>
+<div class="row">	
+	<div class="small-2 large-4 columns"><h2>Admin Locations</h2></div>
+</div>	
 
 	<div ng-controller="locationsController">
 		<div class="row">
@@ -86,16 +70,3 @@
 			<div class="small-3 large-4 columns"><button ng-click="newLocation()">Create Location</button></div>
 		</div>
 	</div>
-
-	<div class="row"><br></div>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>        
-    <script type="text/javascript" src="apps/companies.js"></script>
-    <script type="text/javascript" src="apps/locations.js"></script>
-    <script type="text/javascript" src="services/company_service.js"></script>
-    <script type="text/javascript" src="services/location_service.js"></script>
-    <script type="text/javascript" src="controllers/company_controller.js"></script>
-    <script type="text/javascript" src="controllers/location_controller.js"></script>
-   
-</body>
-</html>

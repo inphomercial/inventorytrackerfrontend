@@ -1,27 +1,9 @@
-<!DOCTYPE html>
 
-<html ng-app="Ingredients">
-<head>
-    <title>User Inventory</title>
+<div class="row">	
+	<div class="small-2 large-4 columns"><h2>User Ingredients</h2></div>
+</div>	
 
-    <!-- Included CSS Files, use foundation.css if you do not want minified code -->
-  	<link rel="stylesheet" href="foundation.css">
-</head>
-
-<body>
-
-	<div class="row">	
-		<div class="small-2 large-4 columns"><h2>Ingredients</h2></div>		
-	</div>	
-	
-	<div class="row">
-		<div class="small-1 large-1 columns"><a href="userInventory.html" class="button tiny">Inventory</a></div>
-		<div class="small-1 large-1 columns"><a href="userMeals.html" class="button tiny">Meals</a></div>
-		<div class="small-1 large-1 columns"><a href="userIngredients.html" class="button tiny">Ingredients</a></div>
-		<div class="small-1 large-1 columns end"><a href="userIndex.html" class="button tiny">Location</a></div>		
-	</div>
-
-	<div ng-controller="ingredientsController">
+<div ng-controller="ingredientsController">
 		<div class="row">
 			<div class="small-6 columns">			
 				<p> Total number of ingredients : {{ ingredients.length }}</p>							
@@ -76,12 +58,3 @@
 			<div class="small-3 large-4 columns"><button ng-click="newIngredient()">Create Ingredient</button></div>
 		</div>
 	</div>
-	<div class="row"><br></div>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>        
-    <script type="text/javascript" src="apps/ingredients.js"></script>
-    <script type="text/javascript" src="services/ingredient_service.js"></script>    
-    <script type="text/javascript" src="controllers/ingredient_controller.js"></script>    
-   
-</body>
-</html>
