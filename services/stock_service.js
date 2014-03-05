@@ -3,7 +3,27 @@ inventoryApp.factory('StockService', function ($http)
 	var StockService = {
 
 		stocks: [],
-/*
+
+		getIngredients: function() 
+		{
+			var url = "http://localhost/inventorytracker/public/index.php/location/ingredients?key=loc2";
+
+			return $http.get(url)
+				.success(function (response) {
+					// it worked
+					StockService.stocks = [];
+					for(var i=0; i < response.length; i++)
+					{
+						StockService.stocks.push(response[i]);
+					}
+
+					return StockService.stocks;
+				})
+				.error(function (data, status) {
+					alert("Error" + status);
+				});
+		},
+		/*
 		getIngredientById: function(id)
 		{
 			var url = "http://localhost/inventorytracker/public/index.php/location/ingredients/" + id + "?key=loc2";
@@ -17,7 +37,7 @@ inventoryApp.factory('StockService', function ($http)
 				});				
 		},
 */
-		getInventories: function() 
+		/*getInventories: function() 
 		{
 			var url = "http://localhost/inventorytracker/public/index.php/location/inventory?key=loc2";
 
@@ -34,7 +54,7 @@ inventoryApp.factory('StockService', function ($http)
 				.error(function (data, status) {
 					alert("Error" + status);
 				});			
-		}
+		}*/
 /*
 		
 		deleteIngredient: function(id) 

@@ -1,9 +1,11 @@
 
-inventoryApp.controller('stocksApp', function ($scope, InventoryService) 
+inventoryApp.controller('stocksController', function ($scope, StockService) 
 {	
+	$scope.stocks = {};
+
 	// Get inventory on load
-	var request = InventoryService.getInventories();
+	var request = StockService.getIngredients()
 	request.then(function(res) {		
-		$scope.inventories = InventoryService.inventories;
+		$scope.stocks = StockService.stocks;
 	})	
 });

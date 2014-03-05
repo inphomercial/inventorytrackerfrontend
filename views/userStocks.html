@@ -3,12 +3,7 @@
 	<div class="small-2 large-4 columns"><h2>User Stocks</h2></div>
 </div>	
 
-<div ng-controller="stocksController">
-	<div class="row">
-		<div class="small-6 columns">			
-			<p> Total number of ingredients : {{ ingredients.length }}</p>
-		</div>		
-	</div>					
+<div ng-controller="stocksController">		
 	<div class="row">
 		<div class="small-6 columns">
 			<input ng-model="query" placeholder="Search">
@@ -25,15 +20,21 @@
 				      	<th>Id</th>
 				      	<th>Name</th>
 				      	<th>Measurement</th>					      	
-				      	<th>Enabled</th>						      		     
+				      	<th>Stock</th>						      		     
+				      	<th>Add</th>
+				      	<th>Remove</th>
+				      	<th>New Total</th>
 				    </tr>
 			  	</thead>
 			  	<tbody>
-				    <tr ng-repeat="ingredient in ingredients | filter:query | orderBy:orderBy">
-				    	<td><a href="#userEditIngredient/{{ ingredient.id }}">{{ ingredient.id }}</a></td>
-				      	<td>{{ ingredient.name }}</td>
-				      	<td>{{ ingredient.unit }}</td>					      	
-				      	<td>{{ ingredient.enabled }}</td>					      	      
+				    <tr ng-repeat="stock in stocks | filter:query | orderBy:name">
+				    	<td><a href="#userEditIngredient/{{ stock.id }}">{{ stock.id }}</a></td>
+				      	<td>{{ stock.name }}</td>
+				      	<td>{{ stock.unit }}</td>					      	
+				      	<td>{{ stock.stock }}</td>					      	      
+				      	<td><input type="text" ng-model="addStock"></td>
+				      	<td><input type="text" ng-model="removeStock"></td>
+				      	<td><input type="text" ng-model="newTotal"></td>				      	
 				    </tr>			   			  
 			  	</tbody>
 			</table>
@@ -48,7 +49,7 @@
 		<div class="small-3 large-4 columns"><input type="text" placeholder="Enabled" ng-model="new_ingredient_enabled"></div>	
 	</div>		
 	<div class="row">
-		<div class="small-3 large-4 columns"><button ng-click="newIngredient()">Create Ingredient</button></div>
+		<!-- <div class="small-3 large-4 columns"><button ng-click="newIngredient()">Create Ingredient</button></div> -->
 	</div>
 	</div>
 </div>

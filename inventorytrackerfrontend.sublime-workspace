@@ -4,42 +4,6 @@
 		"selected_items":
 		[
 			[
-				"getIngred",
-				"getIngredientById"
-			],
-			[
-				"get",
-				"getMealById"
-			],
-			[
-				"com",
-				"companies"
-			],
-			[
-				"userM",
-				"userMealsSelected"
-			],
-			[
-				"in",
-				"incredients"
-			],
-			[
-				"ingre",
-				"ingredient"
-			],
-			[
-				"incre",
-				"incredient"
-			],
-			[
-				"In",
-				"Ingredient"
-			],
-			[
-				"Ing",
-				"IngredientService"
-			],
-			[
 				"Inven",
 				"InventoryService"
 			],
@@ -104,8 +68,16 @@
 				"inventoryApp"
 			],
 			[
+				"get",
+				"getCompanies"
+			],
+			[
 				"inven",
 				"inventoryAppModule"
+			],
+			[
+				"In",
+				"IngredientController"
 			],
 			[
 				"name",
@@ -132,6 +104,10 @@
 				"updatedMeal"
 			],
 			[
+				"ingre",
+				"ingredient_id"
+			],
+			[
 				"meal",
 				"meal_id"
 			],
@@ -148,10 +124,17 @@
 	"buffers":
 	[
 		{
+<<<<<<< HEAD
 			"file": "controllers/ingredient_controller.js",
 			"settings":
 			{
 				"buffer_size": 1095,
+=======
+			"file": "controllers/meal_controller.js",
+			"settings":
+			{
+				"buffer_size": 494,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 				"line_ending": "Windows"
 			}
 		},
@@ -159,27 +142,58 @@
 			"file": "controllers/stock_controller.js",
 			"settings":
 			{
+<<<<<<< HEAD
 				"buffer_size": 248,
+=======
+				"buffer_size": 254,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 				"line_ending": "Windows"
 			}
 		},
 		{
+<<<<<<< HEAD
 			"file": "services/stock_service.js",
 			"settings":
 			{
 				"buffer_size": 2884,
+=======
+			"file": "views/userStocks.html",
+			"settings":
+			{
+				"buffer_size": 1836,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 				"line_ending": "Windows"
 			}
 		},
 		{
+<<<<<<< HEAD
 			"file": "routes/routes.js",
 			"settings":
 			{
 				"buffer_size": 1056,
+=======
+			"file": "controllers/ingredient_edit_controller.js",
+			"settings":
+			{
+				"buffer_size": 704,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 				"line_ending": "Windows"
 			}
 		},
 		{
+<<<<<<< HEAD
+=======
+			"contents": "Searching 38 files for \"ng-click\"\n\nZ:\\Programs\\wamp\\www\\inventorytrackerfrontend\\views\\adminCompanies.html:\n   51  		<div class=\"small-3 large-4 columns\"><input type=\"text\" placeholder=\"Name\" ng-model=\"new_company_name\"></div>\n   52  		<div class=\"small-3 large-4 columns\"><input type=\"text\" placeholder=\"Enabled\" ng-model=\"new_company_enabled\"></div>			\n   53: 		<div class=\"small-3 large-4 columns\"><button ng-click=\"newCompany()\">Create Company</button></div>\n   54  	</div>\n   55  </div>		\n   ..\n   66  		<div class=\"small-3 large-4 columns\"><input type=\"text\" placeholder=\"Name\" ng-model=\"new_company_name\"></div>\n   67  		<div class=\"small-3 large-4 columns\"><input type=\"text\" placeholder=\"Enabled\" ng-model=\"new_company_enabled\"></div>			\n   68: 		<div class=\"small-3 large-4 columns\"><button ng-click=\"newCompany()\">Create Company</button></div>\n   69  	</div>\n   70  </div> -->\n\nZ:\\Programs\\wamp\\www\\inventorytrackerfrontend\\views\\adminEditCompany.html:\n   13  			<input type=\"text\" ng-model=\"selected_company.enabled\" value=\"{{ selected_company.enabled }}\" >\n   14  	\n   15: 			<button ng-click=\"updateCompany()\">Save</button>\n   16  			<a href=\"#adminCompanies\" class=\"button\">Cancel</a>\n   17: 			<button class=\"button alert\" ng-click=\"deleteCompany(seleted_company.id)\">Delete!</button>  \n   18  		</div>\n   19  	</div>\n\nZ:\\Programs\\wamp\\www\\inventorytrackerfrontend\\views\\adminEditLocation.html:\n   23  			<input type=\"text\" ng-model=\"selected_location.company_id\" value=\"{{ selected_location.company_id }}\" >\n   24  	\n   25: 			<button ng-click=\"updateLocation()\">Save</button>\n   26  			<a href=\"#adminLocations\" class=\"button\">Cancel</a>\n   27: 			<button class=\"button alert\" ng-click=\"deleteLocation(selected_location.id)\">Delete!</button>\n   28  		</div> 	\n   29  	</div>\n\nZ:\\Programs\\wamp\\www\\inventorytrackerfrontend\\views\\adminLocations.html:\n   55  					<div class=\"small-3 large-4 columns\"><input type=\"text\" placeholder=\"Enabled\" ng-model=\"new_location_enabled\"></div>							\n   56  					<div class=\"small-3 large-4 columns\"><input type=\"text\" placeholder=\"Company id\" ng-model=\"new_location_company_id\"></div>					\n   57: 					<div class=\"small-3 large-4 columns\"><button ng-click=\"newLocation()\">Create Location</button></div>\n   58  				</div>\n   59  			</div>				\n\nZ:\\Programs\\wamp\\www\\inventorytrackerfrontend\\views\\userEditIngredient.html:\n   13  			<input type=\"text\" ng-model=\"selected_ingredient.enabled\" value=\"{{ selected_ingredient.enabled }}\" >\n   14  			\n   15: 			<button ng-click=\"updateIngredient()\">Save</button>\n   16  			<a href=\"#userIngredients\" class=\"button\">Cancel</a>\n   17: 			<button class=\"button alert\" ng-click=\"deleteIngredient(selected_ingredient.id)\">Delete!</button>  \n   18  		</div>\n   19  </div>\n\nZ:\\Programs\\wamp\\www\\inventorytrackerfrontend\\views\\userEditMeal.html:\n   29  			  	<tbody>\n   30  				    <tr ng-repeat=\"ingredient in selected_meal.ingredients | filter:query | orderBy:orderBy\">\n   31: 				      	<td ng-click=\"pushToAvailableIngredients(selected_meal.id, ingredient.ingredient_id)\">{{ ingredient.name }}</td>\n   32  				      	<td><input type=\"text\" class=\"small\" value=\"{{ ingredient.amount }}\" ng-blur=\"updateIngredientAmount(selected_meal.id, ingredient.ingredient_id, ingredient.amount)\"></td>\n   33  				      	<td>{{ ingredient.unit }}</td>\n   ..\n   46  			  	<tbody>			 		\n   47  				     <tr ng-repeat=\"ingredient in available_ingredients | filter:query | orderBy:orderBy\">\n   48: 				      	<td ng-click=\"pushToCurrentIngredients(selected_meal.id, ingredient.id, 2)\">{{ ingredient.name }}</td>\n   49  				      	<td>{{ ingredient.unit }}</td>					      	      \n   50  				    </tr>			   			   \n   ..\n   55  	\n   56  	<div class=\"row\">\n   57: 		<button ng-click=\"updateMeal()\">Save</button>\n   58  		<a href=\"#userMeals\" class=\"button\">Cancel</a>\n   59: 		<button class=\"button alert\" ng-click=\"deleteMeal(selected_meal.id)\">Delete!</button>\n   60  	</div>\n   61  </div>\n\nZ:\\Programs\\wamp\\www\\inventorytrackerfrontend\\views\\userIngredients.html:\n   49  	</div>		\n   50  	<div class=\"row\">\n   51: 		<div class=\"small-3 large-4 columns\"><button ng-click=\"newIngredient()\">Create Ingredient</button></div>\n   52  	</div>\n   53  	</div>\n\nZ:\\Programs\\wamp\\www\\inventorytrackerfrontend\\views\\userMeals.html:\n   29  					      	<td>{{ meal.name }}</td>					      	\n   30  					      	<td>{{ meal.enabled }}</td>					      	\n   31: 					      	<!-- <td><a href=\"#\" ng-click=\"deleteMeal(meal.id)\">X</a></td>	       -->\n   32  					    </tr>			   			  \n   33  				  	</tbody>\n   ..\n   41  			<div class=\"small-3 large-4 columns\"><input type=\"text\" placeholder=\"Name\" ng-model=\"new_meal_name\"></div>			\n   42  			<div class=\"small-3 large-4 columns\"><input type=\"text\" placeholder=\"Enabled\" ng-model=\"new_meal_enabled\"></div>			\n   43: 			<div class=\"small-3 large-4 columns\"><button ng-click=\"newMeal()\">Create Meal</button></div>\n   44  		</div>\n   45  	</div>\n\nZ:\\Programs\\wamp\\www\\inventorytrackerfrontend\\views\\userMealsSelected.html:\n   23  						  	<tbody>\n   24  							    <tr ng-repeat=\"ingredient in selected_meal.ingredients | filter:query | orderBy:orderBy\">\n   25: 							      	<td ng-click=\"pushToAvailableIngredients(selected_meal.id, ingredient.ingredient_id)\">{{ ingredient.name }}</td>\n   26  							      	<td><input type=\"text\" value=\"{{ ingredient.amount }}\" ng-blur=\"updateIngredientAmount(selected_meal.id, ingredient.ingredient_id, ingredient.amount)\"></td>\n   27  							      	<td>{{ ingredient.unit }}</td>\n   ..\n   40  						  	<tbody>			 		\n   41  							     <tr ng-repeat=\"ingredient in available_ingredients | filter:query | orderBy:orderBy\">\n   42: 							      	<td ng-click=\"pushToCurrentIngredients(selected_meal.id, ingredient.id, 2)\">{{ ingredient.name }}</td>\n   43  							      	<td>{{ ingredient.unit }}</td>					      	      \n   44  							    </tr>			   			   \n   ..\n   49  \n   50  				<div class=\"row\">\n   51: 					<a href=\"#\" class=\"button tiny\" ng-click=\"updateMeal()\">Save</a>\n   52: 					<a href=\"#\" class=\"button tiny\" ng-click=\"clearMeal()\">Cancel</a>\n   53  				</div>\n   54  			</div>\n\nZ:\\Programs\\wamp\\www\\inventorytrackerfrontend\\views\\userStocks.html:\n   48  	</div>		\n   49  	<div class=\"row\">\n   50: 		<!-- <div class=\"small-3 large-4 columns\"><button ng-click=\"newIngredient()\">Create Ingredient</button></div> -->\n   51  	</div>\n   52  	</div>\n\n21 matches across 10 files\n",
+			"settings":
+			{
+				"buffer_size": 6412,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 			"file": "services/ingredient_service.js",
 			"settings":
 			{
@@ -188,26 +202,47 @@
 			}
 		},
 		{
+<<<<<<< HEAD
 			"file": "views/userStocks.html",
 			"settings":
 			{
 				"buffer_size": 1736,
+=======
+			"file": "services/stock_service.js",
+			"settings":
+			{
+				"buffer_size": 3356,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 				"line_ending": "Windows"
 			}
 		},
 		{
+<<<<<<< HEAD
 			"file": "apps/inventories.js",
 			"settings":
 			{
 				"buffer_size": 62,
+=======
+			"file": "services/location_service.js",
+			"settings":
+			{
+				"buffer_size": 2973,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 				"line_ending": "Windows"
 			}
 		},
 		{
+<<<<<<< HEAD
 			"file": "index.html",
 			"settings":
 			{
 				"buffer_size": 2517,
+=======
+			"file": "services/meal_service.js",
+			"settings":
+			{
+				"buffer_size": 3776,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 				"line_ending": "Windows"
 			}
 		}
@@ -239,54 +274,21 @@
 	},
 	"file_history":
 	[
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/views/userEditMeal.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/views/adminEditCompany.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/controllers/company_edit_controller.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/controllers/ingredient_controller.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/controllers/location_edit_controller.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/controllers/meal_edit_controller.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/controllers/location_controller.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/views/adminLocations.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/controllers/inventory_controller.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/controllers/ingredient_edit_controller.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/routes/routes.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/controllers/company_controller.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/views/userEditIngredient.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/index.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/views/userIngredients.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/services/ingredient_service.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/services/company_service.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/views/adminEditLocation.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/services/inventory_service.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/views/userMeals.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/views/userMealsSelected.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/services/meal_service.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/views/adminCompanies.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/controllers/meal_controller.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/services/location_service.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/apps/inventories.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/foundation.css",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/adminLocations.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/adminCompanies.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/userMeals.html",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/apps/companies.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/apps/ingredients.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/apps/locations.js",
-		"/C/Program Files (x86)/wamp/www/inventorytrackerfrontend/apps/meals.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/.gitignore",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/services/inventory_service.js",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/userMeals.html",
+		"/Z/Programs/wamp/www/inventorytrackerfrontend/apps/meals.js",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/userIndex.html",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/controllers/company_controller.js",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/controllers/inventory_controller.js",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/userIngredients.html",
-		"/Z/Programs/wamp/www/inventorytrackerfrontend/userMeals.html",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/userInventory.html",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/controllers/ingredient_controller.js",
 		"/Z/Downloads/Thief PC full game ^^nosTEAM^^/READ ME FIRST !!!.txt",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/controllers/meal_controller.js",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/services/ingredient_service.js",
-		"/Z/Programs/wamp/www/inventorytrackerfrontend/services/inventory_service.js",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/apps/inventories.js",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/services/meal_service.js",
-		"/Z/Programs/wamp/www/inventorytrackerfrontend/apps/meals.js",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/apps/ingredients.js",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/apps/single_location.js",
 		"/Z/Programs/wamp/www/inventorytrackerfrontend/controllers/location_controller.js",
@@ -357,17 +359,13 @@
 	],
 	"find":
 	{
-		"height": 50.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
 		"height": 90.0,
 		"where_history":
 		[
-			"",
-			".",
-			"",
-			".",
 			""
 		]
 	},
@@ -376,30 +374,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"clearCompany",
-			"locationEditController",
-			"companyEditLocation",
-			"<div class=\"small-6 columns\" ng-show=\"selected_company.name\">				\n			<br>\n			<p>Update company</p>\n			<br>\n			<input type=\"text\" ng-model=\"selected_company.name\" value=\"{{ selected_company.name }}\" >\n			<input type=\"text\" ng-model=\"selected_company.enabled\" value=\"{{ selected_company.enabled }}\" >\n			<a href=\"#\" class=\"button\" ng-click=\"updateCompany()\">Save</a>\n			<a href=\"#\" class=\"button\" ng-click=\"clearCompany()\">Cancel</a>\n		</div>",
-			"controllers/ingredient_controller",
-			"$scope.amount",
-			"current_ingredients",
-			"available_ingredients",
-			"},\n",
-			"available_ingredients",
-			"console.log",
-			"// Get all companies on load\n	var request = IngredientService.getIngredients();\n	request.then(function(res) {		\n		$scope.available_ingredients = IngredientService.ingredients;\n\n		console.log($scope.available_ingredients);\n	})",
-			"Meals",
-			"mealApp",
-			"meals",
-			"inventoryApp",
-			"locationApp",
-			"inventoryApp",
-			"locationApp",
-			"inventoryApp",
-			"ingredientsApp",
-			"ingredientApp",
-			"companyApp",
-			"IngredientService",
+			"ng-click",
+			"ingredient",
+			"update",
 			"</",
 			"measurement",
 			"ingredients",
@@ -492,24 +469,41 @@
 	"groups":
 	[
 		{
+<<<<<<< HEAD
 			"selected": 2,
+=======
+			"selected": 5,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 			"sheets":
 			[
 				{
 					"buffer": 0,
+<<<<<<< HEAD
 					"file": "controllers/ingredient_controller.js",
 					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 1095,
+=======
+					"file": "controllers/meal_controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 494,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								579,
 								579
+=======
+								0,
+								0
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 							]
 						],
 						"settings":
@@ -517,11 +511,19 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
+<<<<<<< HEAD
 						"translation.x": -0.0,
 						"translation.y": 124.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
+=======
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 					"type": "text"
 				},
 				{
@@ -530,15 +532,24 @@
 					"semi_transient": false,
 					"settings":
 					{
+<<<<<<< HEAD
 						"buffer_size": 248,
+=======
+						"buffer_size": 254,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								248,
 								248
+=======
+								236,
+								236
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 							]
 						],
 						"settings":
@@ -549,28 +560,405 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< HEAD
 					"stack_index": 5,
+=======
+					"stack_index": 3,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+<<<<<<< HEAD
 					"file": "services/stock_service.js",
 					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 2884,
+=======
+					"file": "views/userStocks.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1836,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								335,
 								335
+=======
+								1112,
+								1112
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 							]
 						],
 						"settings":
 						{
+<<<<<<< HEAD
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+=======
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+<<<<<<< HEAD
+					"stack_index": 0,
+=======
+					"stack_index": 2,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+<<<<<<< HEAD
+					"file": "routes/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1056,
+=======
+					"file": "controllers/ingredient_edit_controller.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 704,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< HEAD
+								987,
+								987
+=======
+								0,
+								0
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+<<<<<<< HEAD
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+=======
+							"translate_tabs_to_spaces": false
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+<<<<<<< HEAD
+					"stack_index": 2,
+=======
+					"stack_index": 1,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+<<<<<<< HEAD
+					"file": "services/ingredient_service.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3773,
+						"regions":
+						{
+=======
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6412,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										409,
+										417
+									],
+									[
+										801,
+										809
+									],
+									[
+										1097,
+										1105
+									],
+									[
+										1239,
+										1247
+									],
+									[
+										1552,
+										1560
+									],
+									[
+										1695,
+										1703
+									],
+									[
+										2200,
+										2208
+									],
+									[
+										2514,
+										2522
+									],
+									[
+										2660,
+										2668
+									],
+									[
+										2981,
+										2989
+									],
+									[
+										3485,
+										3493
+									],
+									[
+										3742,
+										3750
+									],
+									[
+										3874,
+										3882
+									],
+									[
+										4132,
+										4140
+									],
+									[
+										4446,
+										4454
+									],
+									[
+										4862,
+										4870
+									],
+									[
+										5175,
+										5183
+									],
+									[
+										5680,
+										5688
+									],
+									[
+										5972,
+										5980
+									],
+									[
+										6049,
+										6057
+									],
+									[
+										6290,
+										6298
+									]
+								],
+								"scope": ""
+							}
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+<<<<<<< HEAD
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+=======
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+<<<<<<< HEAD
+					"stack_index": 1,
+=======
+					"stack_index": 4,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+<<<<<<< HEAD
+					"file": "views/userStocks.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1736,
+=======
+					"file": "services/ingredient_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3773,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< HEAD
+								479,
+								479
+=======
+								2839,
+								2839
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+							]
+						],
+						"settings":
+						{
+<<<<<<< HEAD
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+=======
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 1215.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+<<<<<<< HEAD
+					"file": "apps/inventories.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 62,
+=======
+					"file": "services/stock_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3356,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< HEAD
+								62,
+								62
+=======
+								22,
+								34
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+							]
+						],
+						"settings":
+						{
+<<<<<<< HEAD
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+=======
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+<<<<<<< HEAD
+					"stack_index": 6,
+=======
+					"stack_index": 7,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+<<<<<<< HEAD
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2517,
+=======
+					"file": "services/location_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2973,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< HEAD
+								1141,
+								1141
+=======
+								0,
+								0
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
+							]
+						],
+						"settings":
+						{
+<<<<<<< HEAD
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 320.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+=======
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -578,46 +966,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "routes/routes.js",
+					"buffer": 8,
+					"file": "services/meal_service.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1056,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								987,
-								987
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "services/ingredient_service.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3773,
+						"buffer_size": 3776,
 						"regions":
 						{
 						},
@@ -637,94 +995,8 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "views/userStocks.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1736,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								479,
-								479
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "apps/inventories.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 62,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								62,
-								62
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2517,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1141,
-								1141
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 320.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
+>>>>>>> 38a51cf10bb2ae49e952003d8ae62ab9d4ff1063
 					"type": "text"
 				}
 			]
@@ -732,7 +1004,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -806,7 +1078,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 378.0,
+	"side_bar_width": 273.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
