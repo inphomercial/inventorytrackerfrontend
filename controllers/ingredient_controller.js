@@ -29,16 +29,7 @@ inventoryApp.controller('ingredientsController', function ($scope, IngredientSer
 		IngredientService.updateIngredient($scope.selected_ingredient);
 		$scope.selected_ingredient = {};
 	};
-
-	// Cancels the update location and clears out the $scope.selected_location box.
-	$scope.clearIngredient = function()
-	{
-		$scope.selected_ingredient = {};
-	}
-});
-
-inventoryApp.controller('newIngredientController', function ($scope, IngredientService)
-{
+	
 	$scope.newIngredient = function()
 	{		
 		var newIngredient = {
@@ -52,5 +43,4 @@ inventoryApp.controller('newIngredientController', function ($scope, IngredientS
 		$scope.new_ingredient_unit = "";
 		$scope.new_ingredient_enabled = "";
 	};
-
 });

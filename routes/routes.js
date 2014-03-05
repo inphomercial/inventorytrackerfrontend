@@ -2,20 +2,29 @@ inventoryApp .config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/adminCompanies', {
-        templateUrl: 'views/adminCompanies.html',
-        controller: 'companiesController'
+        templateUrl: 'views/adminCompanies.html'
+        //controller: 'companiesController'
+      }).
+      when('/adminEditCompany/:company_id', {
+        templateUrl: 'views/adminEditCompany.html'
       }).
       when('/adminLocations', {
-        templateUrl: 'views/adminLocations.html',
-        controller: 'locationsController'
+        templateUrl: 'views/adminLocations.html'
+      }).
+      when('/adminEditLocation/:location_id', {
+        templateUrl: 'views/adminEditLocation.html'
       }).
       when('/userMeals', {
-      	templateUrl: 'views/userMeals.html',
-      	controller: 'mealsController'
+      	templateUrl: 'views/userMeals.html'
+      }).
+      when('/userEditMeal/:meal_id', {
+        templateUrl: 'views/userEditMeal.html'
       }).
       when('/userIngredients', {
       	templateUrl: 'views/userIngredients.html',
-      	controller: 'ingredientsController'
+      }).
+      when('/userEditIngredient/:ingredient_id', {
+        templateUrl: 'views/userEditIngredient.html'
       }).
       when('#userMealsSelected', {
         templateUrl: 'views/userMealsSelected.html',

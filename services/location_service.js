@@ -23,7 +23,8 @@ inventoryApp.factory('LocationService', function ($http)
 
 			return $http.get(url)
 				.success(function (response) {
-					// it worked
+					// it worked clear out the locations
+					LocationService.locations = [];
 					for(var i=0; i < response.length; i++)
 					{
 						LocationService.locations.push(response[i]);

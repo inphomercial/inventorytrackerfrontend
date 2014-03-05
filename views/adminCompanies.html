@@ -1,58 +1,70 @@
 
 <div class="row">	
-	<div class="small-2 large-4 columns"><h2>Admin Companies</h2></div>
+	<div class="small-12 columns"><h2>[Admin] Companies List</h2></div>
 </div>	
 
 <div ng-controller="companiesController">
 	<div class="row">
 		<div class="small-6 columns">			
-			<p> Total number of companies : {{ companies.length }}</p>							
-			<input ng-model="query" placeholder="Search">
-			<br>
-			<table>
-				<thead>
-				    <tr>
-				      	<th>Id</th>
-				      	<th>Name</th>
-				      	<th>Created</th>
-				      	<th>Enabled</th>						      	
-				      	<th>Delete</th>		     
-				    </tr>
-			  	</thead>
-			  	<tbody>
-				    <tr ng-repeat="company in companies | filter:query | orderBy:orderBy">
-				    	<td><a href="#" ng-click="editCompany(company.id)">{{ company.id }}</a></td>
-				      	<td>{{ company.name }}</td>
-				      	<td>{{ company.created_at }}</td>
-				      	<td>{{ company.enabled }}</td>					      	
-				      	<td><a href="#" ng-click="deleteCompany(company.id)">X</a></td>	      
-				    </tr>			   			  
-			  	</tbody>
-			</table>
+			<p> Total number of companies : {{ companies.length }}</p>
+			<div class="row">
+				<div class="small-6 columns">						
+					<input ng-model="query" placeholder="Search">
+				</div>
+			</div>
+			<div class="row">
+				<br>
+			</div>
+			<div class="row">
+				<div class="small-12 columns">
+					<table>
+						<thead>
+						    <tr>
+						      	<th>Id</th>
+						      	<th>Name</th>
+						      	<th>Created</th>
+						      	<th>Enabled</th>						      	     
+						    </tr>
+					  	</thead>
+					  	<tbody>
+						    <tr ng-repeat="company in companies | filter:query | orderBy:orderBy">
+						    	<td><a href="#adminEditCompany/{{ company.id }}">{{ company.id }}</a></td>
+						      	<td>{{ company.name }}</td>
+						      	<td>{{ company.created_at }}</td>
+						      	<td>{{ company.enabled }}</td>					      	
+						    </tr>			   			  
+					  	</tbody>
+					</table>
+				</div>
+			</div>
 		</div>				
-		<div class="small-6 columns" ng-show="selected_company.name">				
-			<br>
-			<p>Update company</p>
-			<br>
-			<input type="text" ng-model="selected_company.name" value="{{ selected_company.name }}" >
-			<input type="text" ng-model="selected_company.enabled" value="{{ selected_company.enabled }}" >
-			<a href="#" class="button" ng-click="updateCompany()">Save</a>
-			<a href="#" class="button" ng-click="clearCompany()">Cancel</a>
-		</div>
+	</div>
+
+	<div class="row">
+		<div><br></div>
+	</div>
+
+	<div class="row">
+		<div class="small-4 large-4 columns"><b>Create New Company</b></div>
+	</div>
+	<div class="row">
+		<div class="small-3 large-4 columns"><input type="text" placeholder="Name" ng-model="new_company_name"></div>
+		<div class="small-3 large-4 columns"><input type="text" placeholder="Enabled" ng-model="new_company_enabled"></div>			
+		<div class="small-3 large-4 columns"><button ng-click="newCompany()">Create Company</button></div>
 	</div>
 </div>		
 
-<div class="row">
+<!-- <div class="row">
 	<div><br></div>
 </div>
 
 <div ng-controller="newCompanyController">
 	<div class="row">
-		<div class="small-4 large-4 columns"><b>Create new company</b></div>
+		<div class="small-4 large-4 columns"><b>Create New Company</b></div>
 	</div>
 	<div class="row">
-		<div class="small-3 large-4 columns">Name :<input type="text" ng-model="new_company_name"></div>
-		<div class="small-3 large-4 columns">Enabled :<input type="text" ng-model="new_company_enabled"></div>			
+		<div class="small-3 large-4 columns"><input type="text" placeholder="Name" ng-model="new_company_name"></div>
+		<div class="small-3 large-4 columns"><input type="text" placeholder="Enabled" ng-model="new_company_enabled"></div>			
 		<div class="small-3 large-4 columns"><button ng-click="newCompany()">Create Company</button></div>
 	</div>
-</div>
+</div> -->

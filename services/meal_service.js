@@ -26,6 +26,7 @@ inventoryApp.factory('MealService', function ($http)
 			return $http.get(url)
 				.success(function (response) {
 					// it worked
+					MealService.meals = [];
 					for(var i=0; i < response.length; i++)
 					{
 						MealService.meals.push(response[i]);

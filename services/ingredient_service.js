@@ -37,16 +37,16 @@ inventoryApp.factory('IngredientService', function ($http)
 			var data = {
 				'meal_id': meal_id,
 				'ingredient_id': ingredient_id,
-				'amount': amount 
+				'amount': amount
 			};
 
 			return $http.put(url, data)
-				.success(function (response) {			
+				.success(function (response) {		
 					return true;
 				})
 				.error(function (data, status) {
 					alert("Error" + status);
-				});			
+				});
 		},
 
 		getIngredients: function() 
@@ -56,6 +56,7 @@ inventoryApp.factory('IngredientService', function ($http)
 			return $http.get(url)
 				.success(function (response) {
 					// it worked
+					IngredientService.ingredients = [];
 					for(var i=0; i < response.length; i++)
 					{
 						IngredientService.ingredients.push(response[i]);
@@ -65,9 +66,8 @@ inventoryApp.factory('IngredientService', function ($http)
 				})
 				.error(function (data, status) {
 					alert("Error" + status);
-				});			
+				});
 		},
-
 		
 		deleteIngredient: function(id) 
 		{

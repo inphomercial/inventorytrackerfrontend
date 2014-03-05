@@ -24,7 +24,8 @@ inventoryApp.factory('CompanyService', function($http)
 
 			return $http.get(url)
 				.success(function (response) {
-					// it worked
+					// it worked reset companies to stop duplication
+					CompanyService.companies = [];
 					for(var i=0; i < response.length; i++)
 					{
 						CompanyService.companies.push(response[i]);
@@ -43,14 +44,15 @@ inventoryApp.factory('CompanyService', function($http)
 
 			return $http.delete(url)
 				.success(function (response) {
-					// it worked						
+					// it worked
 					for(var i=0; i < CompanyService.companies.length; i++)
 					{					
 						if(CompanyService.companies[i].id == id)
 						{												
 							CompanyService.companies.splice(i, 1);
 						}										
-					}							
+					}	
+					console.log(CompanyService.companies);						
 
 					return CompanyService;
 				})
