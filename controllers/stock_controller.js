@@ -1,5 +1,5 @@
 
-inventoryApp.controller('inventoriesController', function ($scope, InventoryService) 
+inventoryApp.controller('stocksApp', function ($scope, InventoryService) 
 {	
 	// Get inventory on load
 	var request = InventoryService.getInventories();

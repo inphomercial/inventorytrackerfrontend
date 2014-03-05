@@ -7,18 +7,18 @@ inventoryApp.controller('ingredientsController', function ($scope, IngredientSer
 		$scope.ingredients = IngredientService.ingredients;
 	})
 	
-	$scope.selected_ingredient = {};
+	//$scope.selecte_dingredient = {};
 
-	$scope.editIngredient = function(id)
+	/*$scope.editIngredient = function(id)
 	{	
 		var request = IngredientService.getIngredientById(id);		
 		request.then(function(res) {			
 			$scope.selected_ingredient = res.data;
 		})
 
-	};
+	};*/
 
-	$scope.deleteIngredient = function(id)
+	/*$scope.deleteIngredient = function(id)
 	{
 		IngredientService.deleteIngredient(id);
 	};
@@ -28,7 +28,7 @@ inventoryApp.controller('ingredientsController', function ($scope, IngredientSer
 	{
 		IngredientService.updateIngredient($scope.selected_ingredient);
 		$scope.selected_ingredient = {};
-	};
+	};*/
 	
 	$scope.newIngredient = function()
 	{		

@@ -1,8 +1,8 @@
-inventoryApp.factory('InventoryService', function ($http) 
+inventoryApp.factory('StockService', function ($http) 
 {	
-	var InventoryService = {
+	var StockService = {
 
-		inventories: [],
+		stocks: [],
 /*
 		getIngredientById: function(id)
 		{
@@ -101,5 +101,5 @@ inventoryApp.factory('InventoryService', function ($http)
 		}*/
 	};
 
-	return InventoryService;
+	return StockService;
 });

@@ -1,1 +1,0 @@
-//var locationApp = angular.module('Locations', []);
