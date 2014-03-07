@@ -2,6 +2,7 @@
 inventoryApp.controller('stocksController', function ($scope, MealService, StockService, IngredientService) 
 {	
 	$scope.stocks = {};
+	$scope.meal = {};
 
 	// Get inventory on load
 	var request = StockService.getStock()
@@ -16,20 +17,24 @@ inventoryApp.controller('stocksController', function ($scope, MealService, Stock
 		}
 	})
 
+	$scope.getMealById = function (id)
+	{
+		var request = MealService.getMealById(id);		
+		request.then(function(res) {
+			$scope.meal = res.data;
+		})
+	},
+
 	$scope.incrementSold = function($index)
 	{
 		$scope.stocks[$index].modified = true;
 		$scope.stocks[$index].sold++;
-
+		
 		var request = MealService.getMealById($scope.stocks[$index].id);
-		request.then(function(res) {		
-			$scope.stocks = res.data;
-		})
-
-
-		//console.log($scope);
-
-		//MealService.sellMeal($scope.stocks[$index].id);
+		request.then(function(res) {					
+			 var meal = res.data;
+			 StockService.sellMeal(meal);
+		})			
 	},
 	
 	$scope.incrementWaste = function($index)
@@ -37,15 +42,19 @@ inventoryApp.controller('stocksController', function ($scope, MealService, Stock
 		$scope.stocks[$index].modified = true;
 		$scope.stocks[$index].wasted++;
 
-//		MealService.sellMeal($scope.stocks[$index]);
-
-		// add a row to a consumed table (id, location_id, meal_id, wasted, sold)	
+		var request = MealService.getMealById($scope.stocks[$index].id);
+		request.then(function(res) {					
+			 var meal = res.data;
+			 StockService.sellMeal(meal);
+		})			
 	},
 
 	$scope.undo = function($index)
 	{
 		var wasted = $scope.stocks[$index].wasted;
 		var sold = $scope.stocks[$index].sold;
+
+		console.log(wasted);
 
 		// get meal by id.
 

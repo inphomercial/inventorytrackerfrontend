@@ -10,14 +10,14 @@ inventoryApp.controller('ingredientsController', function ($scope, IngredientSer
 	$scope.newIngredient = function()
 	{		
 		var newIngredient = {
-			"name": $scope.new_ingredient_name,
-			"unit": $scope.new_ingredient_unit,
-			"enabled" : $scope.new_ingredient_enabled
+			"name": $scope.new_ingredient.name,
+			"unit": $scope.new_ingredient.unit,
+			"enabled" : $scope.new_ingredient.enabled
 		};
 
 		IngredientService.newIngredient(newIngredient);
-		$scope.new_ingredient_name = "";
-		$scope.new_ingredient_unit = "";
-		$scope.new_ingredient_enabled = "";
+		$scope.new_ingredient.name = "";
+		$scope.new_ingredient.unit = "";
+		$scope.new_ingredient.enabled = "";
 	};
 });

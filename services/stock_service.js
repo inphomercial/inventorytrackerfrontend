@@ -1,4 +1,4 @@
-inventoryApp.factory('StockService', function ($http) 
+inventoryApp.factory('StockService', function ($http, MealService, IngredientService, ReconcileService) 
 {	
 	var StockService = {
 
@@ -13,8 +13,11 @@ inventoryApp.factory('StockService', function ($http)
 					// it worked
 					StockService.stocks = [];
 					for(var i=0; i < response.length; i++)
-					{
-						StockService.stocks.push(response[i]);
+					{						
+						if(response[i].enabled)
+						{
+							StockService.stocks.push(response[i]);	
+						}					
 					}
 
 					return StockService.stocks;
@@ -22,7 +25,25 @@ inventoryApp.factory('StockService', function ($http)
 				.error(function (data, status) {
 					alert("Error" + status);
 				});
-		}	
+		},
+
+		sellMeal: function(meal)	
+		{
+			console.log(meal);
+
+			for (var i =0; i< meal.ingredients.length; i++) 
+			{
+				console.log(meal.ingredients[i]);
+
+				var newTotalStock = meal.ingredients[i].stock - meal.ingredients[i].amount;			
+				var updatedIngredient = {
+					"id": meal.ingredients[i].ingredient_id,
+					"stock": newTotalStock
+				};
+				
+				IngredientService.updateIngredient(updatedIngredient);			
+			};					
+		}
 	};
 
 	return StockService;

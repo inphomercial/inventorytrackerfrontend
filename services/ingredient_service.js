@@ -106,9 +106,10 @@ inventoryApp.factory('IngredientService', function ($http)
 				});
 
 		},
-			
-		updateIngredient: function(selected_ingredient) {
 
+		updateIngredient: function(selected_ingredient)
+		{
+			console.log(selected_ingredient);
 			var url = "http://localhost/inventorytracker/public/index.php/location/ingredients/" + selected_ingredient.id + "?key=loc2";		
 
 			return $http.put(url, selected_ingredient)
