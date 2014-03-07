@@ -19,5 +19,5 @@ inventoryApp.controller('mealsController', function ($scope, MealService, Ingred
 		MealService.newMeal(newMeal);
 		$scope.new_meal_name = "";		
 		$scope.new_meal_enabled = "";
-	};
+	}
 });

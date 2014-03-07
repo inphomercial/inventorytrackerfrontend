@@ -26,8 +26,11 @@ inventoryApp .config(['$routeProvider',
       when('/userEditIngredient/:ingredient_id', {
         templateUrl: 'views/userEditIngredient.html'
       }).
-      when('/userStocks', {
-        templateUrl: 'views/userStocks.html'
+      when('/userMealStocks', {
+        templateUrl: 'views/userMealStock.html'
+      }).
+      when('/userReconciles', {
+        templateUrl: 'views/userReconciles.html'
       }).
       otherwise({
         redirectTo: '/'

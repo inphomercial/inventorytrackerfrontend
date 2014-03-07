@@ -8,6 +8,11 @@ inventoryApp.controller('mealEditController', function ($scope, $routeParams, $l
 	var request = IngredientService.getIngredients();
 	request.then(function(res) {		
 		$scope.available_ingredients = IngredientService.ingredients;
+
+		for(var i=0;i<$scope.available_ingredients.length;i++)
+		{
+			$scope.available_ingredients[i].modified = false;
+		}
 	});
 
 	$scope.getMealById = function (id)
@@ -20,49 +25,21 @@ inventoryApp.controller('mealEditController', function ($scope, $routeParams, $l
 
 	$scope.getMealById($scope.id);
 
-	$scope.pushToCurrentIngredients = function (meal_id, ingredient_id, amount)
-	{		
-		//console.log($scope.amount);
-		console.log(meal_id + " " + ingredient_id + " " + amount);
-
+	$scope.addIngredientToMeal = function (meal_id, ingredient_id)
+	{						
 		// updated meal_ingredients with a new row
-		IngredientService.addIngredientToMeal(meal_id, ingredient_id, amount);
+		IngredientService.addIngredientToMeal(meal_id, ingredient_id, 0);
 
 		// Update the local scope by adding the ingredient to the select_meal.ingredients
 		ingredient = IngredientService.getIngredientById(ingredient_id);
 		$scope.selected_meal.ingredients.push(ingredient);
-
+		
 		// Used to reget all of the meal ingredients to update current ingredients list
-		$scope.editMeal(meal_id);
+		$scope.editMeal(meal_id);		
 	}
 
-	$scope.pushToAvailableIngredients = function (meal_id, ingredient_id)
-	{		
-		console.log(meal_id + " " + ingredient_id);
-
-		/*Ingredient: {
-			id: 1,
-			name: 'Rice'
-		}
-
-		incredient = Ingredient.get(1);
-		meal.incredient[ ingredient.id ] = ingredient
-
-		if (ingredient.id in meal.incredients)
-			delete meal.incredient[ ingredient.id ]
-
-		meal.incredients = {
-			1: <Ingredient rice>,
-			2: <Ingredient meat>,
-			3: <Ingredient potatoes>,
-		};
-
-		// add
-		mea.incredients[ 4 ] = <incredient milk>;
-
-		// remove
-		delete meal.incredients[ 1 ];*/
-
+	$scope.removeIngredientFromMeal = function (meal_id, ingredient_id)
+	{				
 		// removes ingredient from meal
 		IngredientService.removeIngredientFromMeal(meal_id, ingredient_id);
 
@@ -75,9 +52,16 @@ inventoryApp.controller('mealEditController', function ($scope, $routeParams, $l
 		}		
 	}
 
-	$scope.updateIngredientAmount = function (meal_id, ingredient_id, amount)
-	{
-		console.log(meal_id + " " + ingredient_id + " " + amount);
+	$scope.updateIngredientAmount = function (meal_id, ingredient_id, amount, $index)
+	{				
+		// updated meal_ingredients meal amount
+		IngredientService.addIngredientToMeal(meal_id, ingredient_id, amount);
+
+		// Used to have a visual of rows that have been changed		
+		if(!$scope.selected_meal.ingredients[$index].modified)
+		{
+			$scope.selected_meal.ingredients[$index].modified = true;
+		}		
 	}
 
 	// Grabs the specific meal from the db by id and saves it to select_meal
@@ -101,7 +85,7 @@ inventoryApp.controller('mealEditController', function ($scope, $routeParams, $l
 	$scope.updateMeal = function()
 	{
 		MealService.updateMeal($scope.selected_meal);
-		$scope.selected_meal = {};
+		$location.path('/userMeals');
 	};
 
 	// Cancels the update location and clears out the $scope.selected_location box.

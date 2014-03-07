@@ -27,8 +27,7 @@
 					    <tr ng-repeat="meal in meals | filter:query | orderBy:orderBy">
 					    	<td><a href="#userEditMeal/{{ meal.id }}">{{ meal.id }}</a></td>
 					      	<td>{{ meal.name }}</td>					      	
-					      	<td>{{ meal.enabled }}</td>					      	
-					      	<!-- <td><a href="#" ng-click="deleteMeal(meal.id)">X</a></td>	       -->
+					      	<td>{{ meal.enabled }}</td>					      						      	
 					    </tr>			   			  
 				  	</tbody>
 				</table>

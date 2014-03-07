@@ -31,7 +31,7 @@ inventoryApp.factory('IngredientService', function ($http)
 		},
 
 		addIngredientToMeal: function(meal_id, ingredient_id, amount)
-		{
+		{			
 			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + meal_id + "/ingredients?key=loc2";
 			
 			var data = {
@@ -106,7 +106,7 @@ inventoryApp.factory('IngredientService', function ($http)
 				});
 
 		},
-		
+			
 		updateIngredient: function(selected_ingredient) {
 
 			var url = "http://localhost/inventorytracker/public/index.php/location/ingredients/" + selected_ingredient.id + "?key=loc2";		
