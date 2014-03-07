@@ -1,5 +1,5 @@
 
-inventoryApp.controller('stocksController', function ($scope, MealService, StockService, IngredientService) 
+inventoryApp.controller('stocksController', function ($scope, MealService, StockService) 
 {	
 	$scope.stocks = {};
 	$scope.meal = {};
@@ -34,7 +34,9 @@ inventoryApp.controller('stocksController', function ($scope, MealService, Stock
 		request.then(function(res) {					
 			 var meal = res.data;
 			 StockService.sellMeal(meal);
-		})			
+		})
+
+		// Write a row to a sales table for reporting		
 	},
 	
 	$scope.incrementWaste = function($index)
@@ -46,38 +48,27 @@ inventoryApp.controller('stocksController', function ($scope, MealService, Stock
 		request.then(function(res) {					
 			 var meal = res.data;
 			 StockService.sellMeal(meal);
-		})			
+		})		
+
+		// Write a row to a sales table for reporting	
 	},
 
 	$scope.undo = function($index)
 	{
 		var wasted = $scope.stocks[$index].wasted;
 		var sold = $scope.stocks[$index].sold;
+		var totalWastedAndSoldToRevert = wasted + sold;
 
-		console.log(wasted);
+		var request = MealService.getMealById($scope.stocks[$index].id);
+		request.then(function(res) {					
+			 var meal = res.data;
+			 StockService.undoSellMeal(meal, totalWastedAndSoldToRevert);
+		})		
 
-		// get meal by id.
+		$scope.stocks[$index].modified = false;
+		$scope.stocks[$index].sold = 0;
+		$scope.stocks[$index].wasted = 0;
 
-		// get ingredients for meal
-
-		// update ingredients - stock amount by meal->amount for the single meal but for each ingredient.
+		// Delete the row attributed to the sales of the item from the sales table
 	}
-
-	/*console.log($scope.actualStock);
-
-	$scope.updateStock = function(stock, $index)
-	{
-		// Updates the actual ingredient stock & creates a reconcile row
-		StockService.updateStock(stock, stock.actualStock);
-
-		// If stock hasnt veen reconciled, set to true and never change back so
-		// The user can do it more than once if they need in the same session.
-		if(!$scope.stocks[$index].reconciled)
-		{
-			$scope.stocks[$index].reconciled = true;
-		}
-		
-		// Clear actualStock form field after submit to clear the button
-		$scope.stocks[$index].actualStock = null;
-	}*/
 });

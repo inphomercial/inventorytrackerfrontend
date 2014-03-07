@@ -73,14 +73,6 @@ inventoryApp.factory('MealService', function ($http, IngredientService)
 					alert("Error" + status);
 				});
 		},
-
-		sellMeal: function(meal_id)
-		{
-			var meal = MealService.getMealById(meal_id);
-			console.log(meal);
-
-			// get Ingreidnets
-		},
 		
 		updateMeal: function(selected_meal) {
 

@@ -32,6 +32,9 @@ inventoryApp .config(['$routeProvider',
       when('/userReconciles', {
         templateUrl: 'views/userReconciles.html'
       }).
+      when('/userReports', {
+        templateUrl: 'views/userReports.html'
+      }).
       otherwise({
         redirectTo: '/'
       });

@@ -1,5 +1,5 @@
 
-inventoryApp.controller('reconcilesController', function ($scope, ReconcileService, IngredientService) 
+inventoryApp.controller('reconcilesController', function ($scope, ReconcileService) 
 {	
 	$scope.stocks = {};
 

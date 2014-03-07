@@ -29,12 +29,8 @@ inventoryApp.factory('StockService', function ($http, MealService, IngredientSer
 
 		sellMeal: function(meal)	
 		{
-			console.log(meal);
-
 			for (var i =0; i< meal.ingredients.length; i++) 
 			{
-				console.log(meal.ingredients[i]);
-
 				var newTotalStock = meal.ingredients[i].stock - meal.ingredients[i].amount;			
 				var updatedIngredient = {
 					"id": meal.ingredients[i].ingredient_id,
@@ -42,6 +38,20 @@ inventoryApp.factory('StockService', function ($http, MealService, IngredientSer
 				};
 				
 				IngredientService.updateIngredient(updatedIngredient);			
+			};					
+		},
+
+		undoSellMeal: function(meal, totalWasteAndSoldToRevert)	
+		{
+			for (var i =0; i< meal.ingredients.length; i++) 
+			{
+				var total = meal.ingredients[i].stock + (meal.ingredients[i].amount * totalWasteAndSoldToRevert);
+				var updatedIngredient = {
+					"id": meal.ingredients[i].ingredient_id,
+					"stock": total
+				};
+				
+				IngredientService.updateIngredient(updatedIngredient);	
 			};					
 		}
 	};
