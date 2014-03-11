@@ -1,6 +1,6 @@
 
 <div class="row">	
-	<div class="small-2 large-4 columns"><h2>User Ingredients</h2></div>
+	<div class="small-2 large-4 columns"><h2>Ingredients</h2></div>
 </div>	
 
 <div ng-controller="ingredientsController">
@@ -22,7 +22,7 @@
 			<table>
 				<thead>
 				    <tr>
-				      	<th>Id</th>
+				      	<!--<th>Id</th>-->
 				      	<th>Name</th>
 				      	<th>Measurement</th>					      	
 				      	<th>Enabled</th>						      		     
@@ -30,8 +30,8 @@
 			  	</thead>
 			  	<tbody>
 				    <tr ng-repeat="ingredient in ingredients | filter:query | orderBy:orderBy">
-				    	<td><a href="#userEditIngredient/{{ ingredient.id }}">{{ ingredient.id }}</a></td>
-				      	<td>{{ ingredient.name }}</td>
+				    	<!--<td><a href="#userEditIngredient/{{ ingredient.id }}">{{ ingredient.id }}</a></td> -->
+				      	<td><a href="#editIngredient/{{ ingredient.id }}">{{ ingredient.name }}</a></td>
 				      	<td>{{ ingredient.unit }}</td>					      	
 				      	<td>{{ ingredient.enabled }}</td>					      	      
 				    </tr>			   			  

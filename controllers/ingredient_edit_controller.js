@@ -17,13 +17,13 @@ inventoryApp.controller('ingredientEditController', function ($scope, $routePara
 	$scope.deleteIngredient = function(id)
 	{
 		IngredientService.deleteIngredient(id);
-		$location.path('/userIngredients');
+		$location.path('/ingredients');
 	};
 
 	
 	$scope.updateIngredient = function()
 	{
 		IngredientService.updateIngredient($scope.selected_ingredient);
-		$location.path('/userIngredients');
+		$location.path('/ingredients');
 	};
 });

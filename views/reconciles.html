@@ -27,7 +27,7 @@
 			  	<tbody>
 				    <!-- <tr ng-repeat="stock in stocks | filter:query | orderBy:name" ng-hide="stock.reconciled"> Use this if you want the ingredient to go away so you can quickly go through them -->
 				    <tr ng-repeat="stock in stocks | filter:query | orderBy:name">
-				    	<td><a href="#userEditIngredient/{{ stock.id }}">{{ stock.id }}</a></td>
+				    	<td><a href="#editIngredient/{{ stock.id }}">{{ stock.id }}</a></td>
 				      	<td>{{ stock.name }}</td>
 				      	<td>{{ stock.unit }}</td>					      					      					      				      	
 				      	<td ng-class="{'button small disabled': stock.reconciled}">{{ stock.stock }}</td>

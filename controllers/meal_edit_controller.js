@@ -78,14 +78,14 @@ inventoryApp.controller('mealEditController', function ($scope, $routeParams, $l
 	$scope.deleteMeal = function(id)
 	{
 		MealService.deleteMeal(id);
-		$location.path("/userMeals");
+		$location.path("/meals");
 	};
 
 	// Writes the new updates to the database
 	$scope.updateMeal = function()
 	{
 		MealService.updateMeal($scope.selected_meal);
-		$location.path('/userMeals');
+		$location.path('/meals');
 	};
 
 	// Cancels the update location and clears out the $scope.selected_location box.

@@ -18,13 +18,13 @@ inventoryApp.controller('locationEditController', function ($scope, $routeParams
 	$scope.deleteLocation = function(id)
 	{		
 		LocationService.deleteLocation(id);
-		$location.path("/adminLocations");
+		$location.path("/locations");
 	};
 
 	// Save button clicked, actually makes the PUT request to update the db
 	$scope.updateLocation = function()
 	{
 		LocationService.updateLocation($scope.selected_location);
-		$location.path("/adminLocations");
+		$location.path("/locations");
 	};
 });

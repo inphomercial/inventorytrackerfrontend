@@ -1,0 +1,40 @@
+
+<div class="row">	
+	<div class="small-2 large-4 columns"><h2>User Stocks</h2></div>
+</div>	
+
+<div ng-controller="stocksController">		
+	<div class="row">
+		<div class="small-6 columns">
+			<input ng-model="query" placeholder="Search">
+		</div>
+	</div>
+	<div class="row">
+		<br>
+	</div>
+	<div class="row">
+		<div class="Small-12 columns">
+			<table>
+				<thead>
+				    <tr>
+				      	<th>Id</th>
+				      	<th>Name</th>
+				      	<th>Measurement</th>					      	
+				      	<th>Stock</th>						      		     
+				      	<th>Actual Stock</th>
+				    </tr>
+			  	</thead>
+			  	<tbody>
+				    <tr ng-repeat="stock in stocks | filter:query | orderBy:name">
+				    	<td><a href="#userEditIngredient/{{ stock.id }}">{{ stock.id }}</a></td>
+				      	<td>{{ stock.name }}</td>
+				      	<td>{{ stock.unit }}</td>					      	
+				      	<td>{{ stock.stock }}</td>					      	      
+				      	<td><input type="text" ng-model="actualStock"></td>	
+				      	<td><button class="tiny" ng-click="updateStock(stock, actualStock)">Save</button></td>			      	
+				    </tr>			   			  
+			  	</tbody>
+			</table>
+		</div>	
+	</div>			
+</div>

@@ -19,12 +19,12 @@ inventoryApp.controller('companyEditController', function ($scope, $routeParams,
 	$scope.updateCompany = function()
 	{
 		CompanyService.updateCompany($scope.selected_company);
-		$location.path('/adminCompanies');
+		$location.path('/companies');
 	};
 
 	$scope.deleteCompany = function(id)
 	{
 		CompanyService.deleteCompany(id);
-		$location.path("/adminCompanies");
+		$location.path("/companies");
 	};
 });

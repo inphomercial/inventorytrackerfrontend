@@ -1,6 +1,6 @@
 
 <div class="row">	
-	<div class="small-2 large-4 columns"><h2>[User] Meals</h2></div>
+	<div class="small-2 large-4 columns"><h2>Meals</h2></div>
 </div>	
 
 <div ng-controller="mealsController">
@@ -18,16 +18,14 @@
 				<table>
 					<thead>
 					    <tr>
-					      	<th>Id</th>
 					      	<th>Name</th>					      					      
 					      	<th>Enabled</th>						      			     
 					    </tr>
 				  	</thead>
 				  	<tbody>
 					    <tr ng-repeat="meal in meals | filter:query | orderBy:orderBy">
-					    	<td><a href="#userEditMeal/{{ meal.id }}">{{ meal.id }}</a></td>
-					      	<td>{{ meal.name }}</td>					      	
-					      	<td>{{ meal.enabled }}</td>					      						      	
+					      	<td><a href="#editMeal/{{ meal.id }}">{{ meal.name }}</a></td>					      	
+					      	<td><input type="checkbox" ng-model="meal.enabled" ng-true-value="true" ng-false-value="false" ng-change="updateEnabled(meal)"></td>  	
 					    </tr>			   			  
 				  	</tbody>
 				</table>

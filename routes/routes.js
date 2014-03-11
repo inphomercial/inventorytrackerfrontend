@@ -1,39 +1,39 @@
 inventoryApp .config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/adminCompanies', {
-        templateUrl: 'views/adminCompanies.html'
+      when('/companies', {
+        templateUrl: 'views/companies.html'
         //controller: 'companiesController'
       }).
-      when('/adminEditCompany/:company_id', {
-        templateUrl: 'views/adminEditCompany.html'
+      when('/editCompany/:company_id', {
+        templateUrl: 'views/editCompany.html'
       }).
-      when('/adminLocations', {
-        templateUrl: 'views/adminLocations.html'
+      when('/locations', {
+        templateUrl: 'views/locations.html'
       }).
-      when('/adminEditLocation/:location_id', {
-        templateUrl: 'views/adminEditLocation.html'
+      when('/editLocation/:location_id', {
+        templateUrl: 'views/editLocation.html'
       }).
-      when('/userMeals', {
-      	templateUrl: 'views/userMeals.html'
+      when('/meals', {
+      	templateUrl: 'views/meals.html'
       }).
-      when('/userEditMeal/:meal_id', {
-        templateUrl: 'views/userEditMeal.html'
+      when('/editMeal/:meal_id', {
+        templateUrl: 'views/editMeal.html'
       }).
-      when('/userIngredients', {
-      	templateUrl: 'views/userIngredients.html',
+      when('/ingredients', {
+      	templateUrl: 'views/ingredients.html',
       }).
-      when('/userEditIngredient/:ingredient_id', {
-        templateUrl: 'views/userEditIngredient.html'
+      when('/editIngredient/:ingredient_id', {
+        templateUrl: 'views/editIngredient.html'
       }).
-      when('/userMealStocks', {
-        templateUrl: 'views/userMealStock.html'
+      when('/mealSales', {
+        templateUrl: 'views/mealSales.html'
       }).
-      when('/userReconciles', {
-        templateUrl: 'views/userReconciles.html'
+      when('/reconciles', {
+        templateUrl: 'views/reconciles.html'
       }).
-      when('/userReports', {
-        templateUrl: 'views/userReports.html'
+      when('/reports', {
+        templateUrl: 'views/reports.html'
       }).
       otherwise({
         redirectTo: '/'
