@@ -22,7 +22,9 @@ inventoryApp.factory('IngredientService', function ($http)
 			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + meal_id + "/ingredients/" + ingredient_id + "?key=loc2";
 
 			return $http.delete(url)
-				.success(function (response) {
+				.success(function (response) 
+				{
+					alertify.success("Ingredient Removed From Meal");
 					return true;
 				})
 				.error(function (data, status) {
@@ -41,7 +43,9 @@ inventoryApp.factory('IngredientService', function ($http)
 			};
 
 			return $http.put(url, data)
-				.success(function (response) {		
+				.success(function (response) 
+				{		
+					alertify.success("Ingredient Added To Meal");
 					return true;
 				})
 				.error(function (data, status) {
@@ -74,7 +78,10 @@ inventoryApp.factory('IngredientService', function ($http)
 			var url = "http://localhost/inventorytracker/public/index.php/location/ingredients/" + id + "?key=loc2";
 
 			return $http.delete(url)
-				.success(function (response) {
+				.success(function (response) 
+				{
+					alertify.success("Ingredient Deleted");
+
 					// it worked						
 					for(var i=0; i < IngredientService.ingredients.length; i++)
 					{					
@@ -98,7 +105,8 @@ inventoryApp.factory('IngredientService', function ($http)
 
 			return $http({method: 'POST', url: postUrl, data: newIngredient })
 				.success(function( data, status, headers, config ) 
-				{												
+				{		
+					alertify.success("Ingredient Created");										
 					IngredientService.ingredients.push(newIngredient);
 				})
 				.error(function( data, status, headers, config) {
@@ -113,8 +121,10 @@ inventoryApp.factory('IngredientService', function ($http)
 			var url = "http://localhost/inventorytracker/public/index.php/location/ingredients/" + selected_ingredient.id + "?key=loc2";		
 
 			return $http.put(url, selected_ingredient)
-				.success(function (response) {
-					
+				.success(function (response) 
+				{
+					alertify.success("Ingredient Updated");
+
 					// it worked						
 					for(var i=0; i < IngredientService.ingredients.length; i++)
 					{					

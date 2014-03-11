@@ -42,7 +42,10 @@ inventoryApp.factory('MealService', function ($http, IngredientService)
 			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + id + "?key=loc2";
 
 			return $http.delete(url)
-				.success(function (response) {
+				.success(function (response) 
+				{
+					alertify.success("Meal Deleted");
+
 					// it worked						
 					for(var i=0; i < MealService.meals.length; i++)
 					{					
@@ -66,7 +69,8 @@ inventoryApp.factory('MealService', function ($http, IngredientService)
 
 			return $http({method: 'POST', url: postUrl, data: newMeal })
 				.success(function( data, status, headers, config ) 
-				{												
+				{				
+					alertify.success("Meal Created");								
 					MealService.meals.push(newMeal);
 				})
 				.error(function( data, status, headers, config) {
@@ -79,8 +83,10 @@ inventoryApp.factory('MealService', function ($http, IngredientService)
 			var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + selected_meal.id + "?key=loc2";		
 
 			return $http.put(url, selected_meal)
-				.success(function (response) {
-					
+				.success(function (response) 
+				{
+					alertify.success("Meal Updated");
+
 					// it worked						
 					for(var i=0; i < MealService.meals.length; i++)
 					{					

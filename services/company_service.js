@@ -45,6 +45,8 @@ inventoryApp.factory('CompanyService', function($http)
 			return $http.delete(url)
 				.success(function (response) {
 					// it worked
+					alertify.success("Company Deleted");
+
 					for(var i=0; i < CompanyService.companies.length; i++)
 					{					
 						if(CompanyService.companies[i].id == id)
@@ -67,7 +69,9 @@ inventoryApp.factory('CompanyService', function($http)
 
 			return $http({method: 'POST', url: postUrl, data: newCompany })
 				.success(function( data, status, headers, config ) 
-				{												
+				{			
+					alertify.success("Company Created");
+
 					CompanyService.companies.push(newCompany);
 				})
 				.error(function( data, status, headers, config) {
@@ -81,8 +85,10 @@ inventoryApp.factory('CompanyService', function($http)
 			var url = "http://localhost/inventorytracker/public/index.php/admin/" + selected_company.id + "?key=admin";		
 
 			return $http.put(url, selected_company)
-				.success(function (response) {
-					
+				.success(function (response) 
+				{
+					alertify.success("Company Updated");
+
 					// it worked						
 					for(var i=0; i < CompanyService.companies.length; i++)
 					{					

@@ -43,7 +43,10 @@ inventoryApp.factory('ReconcileService', function ($http)
 			};
 
 			return $http.put(url, selected_stock)
-				.success(function (response) {					
+				.success(function (response) 
+				{
+					alertify.success("Stock Updated");
+
 					// it worked						
 					for(var i=0; i < ReconcileService.stocks.length; i++)
 					{					

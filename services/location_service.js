@@ -43,7 +43,9 @@ inventoryApp.factory('LocationService', function ($http)
 
 			return $http.delete(url)
 				.success(function (response) {
-					// it worked						
+					// it worked	
+					alertify.success("Location Deleted");
+
 					for(var i=0; i < LocationService.locations.length; i++)
 					{					
 						if(LocationService.locations[i].id == id)
@@ -65,7 +67,9 @@ inventoryApp.factory('LocationService', function ($http)
 
 			return $http({method: 'POST', url: postUrl, data: newLocation })
 				.success(function( data, status, headers, config ) 
-				{												
+				{				
+					alertify.success("Location Created");
+
 					LocationService.locations.push(newLocation);
 				})
 				.error(function( data, status, headers, config) {
@@ -79,7 +83,9 @@ inventoryApp.factory('LocationService', function ($http)
 			
 			return $http.put(url, selected_location)
 				.success(function (response) {					
-					// it worked						
+					// it worked		
+					alertify.success("Location Updated");
+									
 					for(var i=0; i < LocationService.locations.length; i++)
 					{					
 						if(LocationService.locations[i].id == selected_location.id)
