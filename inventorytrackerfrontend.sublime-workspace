@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"crea",
+				"createIngredientPushed"
+			],
+			[
+				"create",
+				"createMealPushed"
+			],
+			[
 				"to",
 				"total"
 			],
@@ -179,15 +187,15 @@
 			"file": "controllers/ingredient_controller.js",
 			"settings":
 			{
-				"buffer_size": 622,
+				"buffer_size": 925,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "controllers/meal_controller.js",
+			"file": "controllers/location_controller.js",
 			"settings":
 			{
-				"buffer_size": 493,
+				"buffer_size": 760,
 				"line_ending": "Windows"
 			}
 		},
@@ -211,7 +219,7 @@
 			"file": "controllers/meal_edit_controller.js",
 			"settings":
 			{
-				"buffer_size": 2706,
+				"buffer_size": 2698,
 				"line_ending": "Windows"
 			}
 		},
@@ -224,7 +232,7 @@
 			}
 		},
 		{
-			"file": "views/adminCompanies.html",
+			"file": "views/companies.html",
 			"settings":
 			{
 				"buffer_size": 2192,
@@ -243,7 +251,7 @@
 			"file": "services/company_service.js",
 			"settings":
 			{
-				"buffer_size": 2678,
+				"buffer_size": 2797,
 				"line_ending": "Windows"
 			}
 		},
@@ -251,7 +259,15 @@
 			"file": "services/meal_service.js",
 			"settings":
 			{
-				"buffer_size": 2611,
+				"buffer_size": 2734,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "services/reconcile_service.js",
+			"settings":
+			{
+				"buffer_size": 2150,
 				"line_ending": "Windows"
 			}
 		},
@@ -259,49 +275,124 @@
 			"file": "services/location_service.js",
 			"settings":
 			{
-				"buffer_size": 2973,
+				"buffer_size": 3097,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/userMealStock.html",
+			"file": "services/ingredient_service.js",
 			"settings":
 			{
-				"buffer_size": 1194,
+				"buffer_size": 4069,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "Searching 46 files for \"sellMeal\"\n\nC:\\Program Files (x86)\\wamp\\www\\inventorytrackerfrontend\\controllers\\stock_controller.js:\n   34  		request.then(function(res) {					\n   35  			 var meal = res.data;\n   36: 			 StockService.sellMeal(meal);\n   37  		})			\n   38  	},\n   ..\n   46  		request.then(function(res) {					\n   47  			 var meal = res.data;\n   48: 			 StockService.sellMeal(meal);\n   49  		})			\n   50  	},\n\nC:\\Program Files (x86)\\wamp\\www\\inventorytrackerfrontend\\services\\meal_service.js:\n   75  		},\n   76  \n   77: 		sellMeal: function(meal_id)\n   78  		{\n   79  			var meal = MealService.getMealById(meal_id);\n\nC:\\Program Files (x86)\\wamp\\www\\inventorytrackerfrontend\\services\\stock_service.js:\n   28  		},\n   29  \n   30: 		sellMeal: function(meal)	\n   31  		{\n   32  			console.log(meal);\n\n4 matches across 3 files\n",
+			"file": "views/ingredients.html",
 			"settings":
 			{
-				"buffer_size": 826,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
+				"buffer_size": 1873,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/meals.html",
+			"settings":
+			{
+				"buffer_size": 1639,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/meal_controller.js",
+			"settings":
+			{
+				"buffer_size": 1373,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/editCompany.html",
+			"settings":
+			{
+				"buffer_size": 700,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/mealSales.html",
+			"settings":
+			{
+				"buffer_size": 1186,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/reconciles.html",
+			"settings":
+			{
+				"buffer_size": 1421,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "routes/routes.js",
 			"settings":
 			{
-				"buffer_size": 1239,
+				"buffer_size": 1142,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/userEditIngredient.html",
+			"file": "views/editIngredient.html",
 			"settings":
 			{
-				"buffer_size": 793,
+				"buffer_size": 782,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "\n<div class=\"row\">	\n	<div class=\"small-2 large-4 columns\"><h2>User Stocks</h2></div>\n</div>	\n\n<div ng-controller=\"stocksController\">		\n	<div class=\"row\">\n		<div class=\"small-6 columns\">\n			<input ng-model=\"query\" placeholder=\"Search\">\n		</div>\n	</div>\n	<div class=\"row\">\n		<br>\n	</div>\n	<div class=\"row\">\n		<div class=\"Small-12 columns\">\n			<table>\n				<thead>\n				    <tr>\n				      	<th>Id</th>\n				      	<th>Name</th>\n				      	<th>Measurement</th>					      	\n				      	<th>Stock</th>						      		     \n				      	<th>Actual Stock</th>\n				    </tr>\n			  	</thead>\n			  	<tbody>\n				    <tr ng-repeat=\"stock in stocks | filter:query | orderBy:name\">\n				    	<td><a href=\"#userEditIngredient/{{ stock.id }}\">{{ stock.id }}</a></td>\n				      	<td>{{ stock.name }}</td>\n				      	<td>{{ stock.unit }}</td>					      	\n				      	<td>{{ stock.stock }}</td>					      	      \n				      	<td><input type=\"text\" ng-model=\"actualStock\"></td>	\n				      	<td><button class=\"tiny\" ng-click=\"updateStock(stock, actualStock)\">Save</button></td>			      	\n				    </tr>			   			  \n			  	</tbody>\n			</table>\n		</div>	\n	</div>			\n</div>",
+			"file": "views/editLocation.html",
+			"settings":
+			{
+				"buffer_size": 1104,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/editMeal.html",
+			"settings":
+			{
+				"buffer_size": 2101,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/location_edit_controller.js",
+			"settings":
+			{
+				"buffer_size": 769,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/ingredient_edit_controller.js",
+			"settings":
+			{
+				"buffer_size": 696,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/company_edit_controller.js",
+			"settings":
+			{
+				"buffer_size": 738,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "views/userStocks.html",
-			"file_size": -1,
-			"file_write_time": -1,
 			"settings":
 			{
 				"buffer_size": 1133,
@@ -320,12 +411,20 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2876,
+				"buffer_size": 2959,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/userReports.html",
+			"file": "controllers/company_controller.js",
+			"settings":
+			{
+				"buffer_size": 502,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/reports.html",
 			"settings":
 			{
 				"buffer_size": 139,
@@ -497,6 +596,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"createMealPushed",
+			"adminCompanies",
+			"userIngredients",
+			"adminLocations",
+			"userMeals",
+			"userReports",
+			"userReconciles",
+			"userMealStocks",
+			"userEditIngredient",
+			"userIngredients",
+			"userEditMeal",
+			"userMeals",
+			"adminEditLocation",
+			"adminLocations",
+			"adminEditCompany",
+			"adminCompanies",
+			"userEditMeal",
+			"', ",
+			"userEditMeal",
+			"userEditIngredient",
+			"userEdit",
+			"\");\n",
 			"IngredientService",
 			"database",
 			"sellMeal",
@@ -602,11 +723,7 @@
 			"location",
 			"Location",
 			"location",
-			"name",
-			"company",
-			"dog",
-			"cat",
-			"dog"
+			"name"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -614,6 +731,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"editMeal",
+			"editIngredient"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -624,7 +743,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 22,
 			"sheets":
 			[
 				{
@@ -633,15 +752,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 622,
+						"buffer_size": 925,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								261,
-								261
+								917,
+								917
 							]
 						],
 						"settings":
@@ -653,16 +772,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "controllers/meal_controller.js",
+					"file": "controllers/location_controller.js",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 493,
+						"buffer_size": 760,
 						"regions":
 						{
 						},
@@ -682,7 +801,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -698,8 +817,8 @@
 						"selection":
 						[
 							[
-								1173,
-								1173
+								543,
+								543
 							]
 						],
 						"settings":
@@ -710,7 +829,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
@@ -739,7 +858,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
@@ -748,15 +867,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2706,
+						"buffer_size": 2698,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2277,
-								2277
+								636,
+								636
 							]
 						],
 						"settings":
@@ -765,10 +884,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1022.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -797,12 +916,12 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
-					"file": "views/adminCompanies.html",
+					"file": "views/companies.html",
 					"semi_transient": false,
 					"settings":
 					{
@@ -813,8 +932,8 @@
 						"selection":
 						[
 							[
-								248,
-								248
+								688,
+								688
 							]
 						],
 						"settings":
@@ -826,7 +945,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
@@ -842,8 +961,153 @@
 						"selection":
 						[
 							[
-								431,
-								431
+								1006,
+								1006
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 407.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "services/company_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2288,
+								2288
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "services/meal_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2734,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2265,
+								2265
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1797.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "services/reconcile_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1222,
+								1222
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "services/location_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3097,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2373,
+								2373
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "services/ingredient_service.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4069,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								763,
+								763
 							]
 						],
 						"settings":
@@ -859,107 +1123,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "services/company_service.js",
+					"buffer": 13,
+					"file": "views/ingredients.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2678,
+						"buffer_size": 1873,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1780,
-								1780
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 36.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "services/meal_service.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2611,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1899,
-								1899
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "services/location_service.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2973,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1954,
-								1954
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 651.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "views/userMealStock.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1194,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1092,
-								1092
+								958,
+								958
 							]
 						],
 						"settings":
@@ -971,82 +1148,173 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 14,
+					"file": "views/meals.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 826,
+						"buffer_size": 1639,
 						"regions":
 						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										224,
-										232
-									],
-									[
-										371,
-										379
-									],
-									[
-										526,
-										534
-									],
-									[
-										734,
-										742
-									]
-								],
-								"scope": ""
-							}
 						},
 						"selection":
 						[
 							[
-								737,
-								737
+								446,
+								446
 							]
 						],
 						"settings":
 						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "routes/routes.js",
+					"buffer": 15,
+					"file": "controllers/meal_controller.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1239,
+						"buffer_size": 1373,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								740,
-								740
+								903,
+								903
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 488.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "views/editCompany.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 700,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								553,
+								553
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "views/mealSales.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								422,
+								422
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "views/reconciles.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								481,
+								481
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "routes/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1027,
+								1027
+							],
+							[
+								1067,
+								1067
 							]
 						],
 						"settings":
@@ -1063,20 +1331,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "views/userEditIngredient.html",
+					"buffer": 20,
+					"file": "views/editIngredient.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 793,
+						"buffer_size": 782,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								636,
+								636
 							]
 						],
 						"settings":
@@ -1088,11 +1356,164 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "views/editLocation.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1104,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								951,
+								951
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "views/editMeal.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								571,
+								571
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "controllers/location_edit_controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 769,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								549,
+								549
+							],
+							[
+								758,
+								758
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "controllers/ingredient_edit_controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 696,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								537,
+								537
+							],
+							[
+								685,
+								685
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "controllers/company_edit_controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 738,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								698,
+								698
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 26,
 					"file": "views/userStocks.html",
 					"semi_transient": false,
 					"settings":
@@ -1117,11 +1538,11 @@
 						"translation.y": 9.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 27,
 					"file": "apps/inventories.js",
 					"semi_transient": false,
 					"settings":
@@ -1145,24 +1566,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 28,
 					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2876,
+						"buffer_size": 2959,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								813,
-								813
+								587,
+								587
 							]
 						],
 						"settings":
@@ -1172,15 +1593,44 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 407.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
-					"file": "views/userReports.html",
+					"buffer": 29,
+					"file": "controllers/company_controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								352,
+								352
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "views/reports.html",
 					"semi_transient": false,
 					"settings":
 					{
@@ -1204,7 +1654,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 19,
 					"type": "text"
 				}
 			]
@@ -1248,7 +1698,7 @@
 	"project": "inventorytrackerfrontend.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 94.0
 	},
 	"save_all_on_build": true,
 	"select_file":
