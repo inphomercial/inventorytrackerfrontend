@@ -1,9 +1,24 @@
 
-<div class="row">	
-	<div class="small-2 large-4 columns"><h2>Ingredients</h2></div>
-</div>	
-
 <div ng-controller="ingredientsController">
+	<div class="row">	
+		<div class="small-3 columns"><h2>Ingredients</h2></div>
+		<div class="small-2 columns end"><button class="tiny" ng-click="showCreateIngredient()">Create Ingredient</button></div>
+	</div>	
+	<div class="row">
+		<div class="small-12 columns" ng-show="createIngredientPushed">
+			<div class="row">
+				<div class="small-4 columns"><b>Create new Ingredient</b></div>
+			</div>
+			<div class="row">
+				<div class="small-3 columns"><input type="text" placeholder="Name" ng-model="new_ingredient.name"></div>
+				<div class="small-3 columns"><input type="text" placeholder="Unit" ng-model="new_ingredient.unit"></div>
+				<div class="small-3 columns end"><input type="text" placeholder="Enabled" ng-model="new_ingredient.enabled"></div>	
+			</div>		
+			<div class="row">
+				<div class="small-3 columns"><button ng-click="newIngredient()">Create Ingredient</button></div>
+			</div>
+		</div>
+	</div>
 	<div class="row">
 		<div class="small-6 columns">			
 			<p> Total number of ingredients : {{ ingredients.length }}</p>
@@ -22,7 +37,6 @@
 			<table>
 				<thead>
 				    <tr>
-				      	<!--<th>Id</th>-->
 				      	<th>Name</th>
 				      	<th>Measurement</th>					      	
 				      	<th>Enabled</th>						      		     
@@ -30,7 +44,6 @@
 			  	</thead>
 			  	<tbody>
 				    <tr ng-repeat="ingredient in ingredients | filter:query | orderBy:orderBy">
-				    	<!--<td><a href="#userEditIngredient/{{ ingredient.id }}">{{ ingredient.id }}</a></td> -->
 				      	<td><a href="#editIngredient/{{ ingredient.id }}">{{ ingredient.name }}</a></td>
 				      	<td>{{ ingredient.unit }}</td>					      	
 				      	<td>{{ ingredient.enabled }}</td>					      	      
@@ -39,16 +52,4 @@
 			</table>
 		</div>	
 	</div>			
-	<div class="row">
-		<div class="small-4 large-4 columns"><b>Create new Ingredient</b></div>
-	</div>
-	<div class="row">
-		<div class="small-3 large-4 columns"><input type="text" placeholder="Name" ng-model="new_ingredient.name"></div>
-		<div class="small-3 large-4 columns"><input type="text" placeholder="Unit" ng-model="new_ingredient.unit"></div>
-		<div class="small-3 large-4 columns"><input type="text" placeholder="Enabled" ng-model="new_ingredient.enabled"></div>	
-	</div>		
-	<div class="row">
-		<div class="small-3 large-4 columns"><button ng-click="newIngredient()">Create Ingredient</button></div>
-	</div>
-	</div>
 </div>
