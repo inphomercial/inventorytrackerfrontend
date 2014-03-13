@@ -1,1 +1,4 @@
-/inventorytrackerfrontend.sublime-project
+*.sublime-project
+node_modules
+bower_components
+.sass-cache
