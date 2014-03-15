@@ -39,14 +39,12 @@
                     <tr>
                         <th>Name</th>
                         <th>Measurement</th>
-                        <th>Enabled</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="ingredient in ingredients | filter:query | orderBy:orderBy">
                         <td><a href="#editIngredient/{{ ingredient.id }}">{{ ingredient.name }}</a></td>
                         <td>{{ ingredient.unit }}</td>
-                        <td>{{ ingredient.enabled }}</td>
                     </tr>
                 </tbody>
             </table>
