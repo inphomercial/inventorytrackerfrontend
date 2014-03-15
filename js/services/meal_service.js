@@ -13,7 +13,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService)
                     return response;
                 })
                 .error(function (data, status) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         },
 
@@ -33,7 +33,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService)
                     return MealService.meals;
                 })
                 .error(function (data, status) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         },
 
@@ -58,7 +58,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService)
                     return MealService;
                 })
                 .error(function (data, status) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         },
 
@@ -72,9 +72,10 @@ inventoryApp.factory('MealService', function ($http, IngredientService)
                 {
                     alertify.success("Meal Created");
                     MealService.meals.push(data);
+                    return data;
                 })
                 .error(function( data, status, headers, config) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         },
 
@@ -100,7 +101,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService)
                     return MealService;
                 })
                 .error(function (data, status) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         }
     };

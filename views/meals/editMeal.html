@@ -1,64 +1,64 @@
-
-<div class="row">	
-	<div class="small-12 columns"><h2>Edit Meal</h2></div>
+<div class="row">
+    <div class="small-12 columns">
+        <h2>Edit Meal</h2>
+    </div>
 </div>
 
 <div ng-controller="mealEditController">
-	
-	<div class="row">
-		<div class="small-6 columns" ng-show="selected_meal.name">										
-			<label>Meal Name</label>
-			<input type="text" ng-model="selected_meal.name" value="{{ selected_meal.name }}" >	
+    <div class="row">
+        <div class="small-6 columns" ng-show="meal.name">
+            <label>Meal Name</label>
+            <input type="text" ng-model="meal.name" value="{{ meal.name }}" >
 
-			<label>Enabled</label>			
-			<input type="text" ng-model="selected_meal.enabled" value="{{ selected_meal.enabled }}">			
-		</div>
-	</div>
+            <label>Enabled</label>
+            <input type="text" ng-model="meal.enabled" value="{{ meal.enabled }}">
+        </div>
+    </div>
 
-	<div class="row">					
-		<div class="small-6 columns">
-			<h4>Ingredients Used</h4>
-			<table>
-				<thead>
-				    <tr>
-				      	<th>Ingredient</th>	
-				      	<th>Amount</th>
-				      	<th>Unit</th>				      					          
-				    </tr>
-			  	</thead>
-			  	<tbody>
-				    <tr ng-repeat="ingredient in selected_meal.ingredients | filter:query | orderBy:orderBy">
-				      	<td ng-click="removeIngredientFromMeal(selected_meal.id, ingredient.ingredient_id)">{{ ingredient.name }}</td>
-				      	<td><input type="text" class="small" ng-model="ingredient.amount" ng-blur="updateIngredientAmount(selected_meal.id, ingredient.ingredient_id, ingredient.amount, $index)"></td>
-				      	<td ng-class="{'button small disabled': ingredient.modified}">{{ ingredient.unit }}</td>
-				    </tr>			   		
-			  	</tbody>
-			</table>
-		</div>
-				
-		<div class="small-5 columns">
-			<h4>Available Ingredients</h4>
-			<table>
-				<thead>
-				    <tr>
-				      	<th>Ingredient</th>					      					      	     
-				      	<th>Unit</th>
-				    </tr>
-			  	</thead>
-			  	<tbody>			 		
-				     <tr ng-repeat="ingredient in available_ingredients | filter:query | orderBy:orderBy">
-				      	<td ng-click="addIngredientToMeal(selected_meal.id, ingredient.id)">{{ ingredient.name }}</td>
-				      	<td>{{ ingredient.unit }}</td>					      	      
-				    </tr>			   			   
-			  	</tbody>
-			</table>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="small-12 columns">
-			<button ng-click="updateMeal()">Done</button>
-			<button class="button alert" ng-click="deleteMeal(selected_meal.id)">Delete!</button>
-		</div>
-	</div>
+    <div class="row">
+        <div class="small-6 columns">
+            <h4>Ingredients Used</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ingredient</th>
+                        <th>Amount</th>
+                        <th>Unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="ingredient in meal.ingredients | filter:query | orderBy:orderBy">
+                        <td ng-click="removeIngredientFromMeal(meal.id, ingredient.ingredient_id)">{{ ingredient.name }}</td>
+                        <td><input type="text" class="small" ng-model="ingredient.amount" ng-blur="updateIngredientAmount(meal.id, ingredient.ingredient_id, ingredient.amount, $index)"></td>
+                        <td ng-class="{'button small disabled': ingredient.modified}">{{ ingredient.unit }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="small-5 columns">
+            <h4>Available Ingredients</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ingredient</th>
+                        <th>Unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr ng-repeat="ingredient in available_ingredients | filter:query | orderBy:orderBy">
+                        <td ng-click="addIngredientToMeal(meal.id, ingredient.id)">{{ ingredient.name }}</td>
+                        <td>{{ ingredient.unit }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <button ng-click="updateMeal()">Done</button>
+            <button class="button alert" ng-click="deleteMeal(meal.id)">Delete!</button>
+        </div>
+    </div>
 </div>

@@ -1,6 +1,4 @@
-
-inventoryApp.controller('mealsController', function ($scope, MealService, IngredientService)
-{
+inventoryApp.controller('mealsController', function ($scope, $location, MealService, IngredientService) {
     // Holds all the meal objects
     $scope.meals = {};
 
@@ -14,22 +12,14 @@ inventoryApp.controller('mealsController', function ($scope, MealService, Ingred
         $scope.meals = MealService.meals;
     });
 
-    // Used to show/hide the div to create a new meal
-    $scope.showCreateMeal = function()
-    {
-        $scope.createMealPushed = !$scope.createMealPushed;
-    },
 
     $scope.updateEnabled = function(meal)
     {
         console.log(meal.enabled);
 
-        if(meal.enabled == 1)
-        {
+        if (meal.enabled == 1) {
             meal.enabled = 0;
-        }
-        else if(meal.enabled == 0)
-        {
+        } else {
             meal.enabled = 1;
         }
 
@@ -40,14 +30,13 @@ inventoryApp.controller('mealsController', function ($scope, MealService, Ingred
     {
         var newMeal = {
             "name": $scope.new_meal_name,
-            "enabled" : $scope.new_meal_enabled
+            "enabled" : true
         };
 
-        MealService.newMeal(newMeal);
-        $scope.new_meal_name = "";
-        $scope.new_meal_enabled = "";
-
-        // Clear to hide the create meal div after creation
-        $scope.createMealPushed = false;
+        request = MealService.newMeal(newMeal);
+        request.then(function(res) {
+            // once the meal is created, redirect to the edit page
+            $location.path('/editMeal/' + res.data.id);
+        })
     }
 });

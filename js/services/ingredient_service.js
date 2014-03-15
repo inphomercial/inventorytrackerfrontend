@@ -13,7 +13,7 @@ inventoryApp.factory('IngredientService', function ($http)
                     return response;
                 })
                 .error(function (data, status) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         },
 
@@ -28,7 +28,7 @@ inventoryApp.factory('IngredientService', function ($http)
                     return true;
                 })
                 .error(function (data, status) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         },
 
@@ -49,7 +49,7 @@ inventoryApp.factory('IngredientService', function ($http)
                     return true;
                 })
                 .error(function (data, status) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         },
 
@@ -61,13 +61,13 @@ inventoryApp.factory('IngredientService', function ($http)
                 .success(function (response) {
                     // it worked
                     IngredientService.ingredients = [];
-                    for(var i=0; i < response.length; i++) {
+                    for (var i=0; i < response.length; i++) {
                         IngredientService.ingredients.push(response[i]);
                     }
                     return IngredientService.ingredients;
                 })
                 .error(function (data, status) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         },
 
@@ -92,7 +92,7 @@ inventoryApp.factory('IngredientService', function ($http)
                     return IngredientService;
                 })
                 .error(function (data, status) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         },
 
@@ -108,7 +108,7 @@ inventoryApp.factory('IngredientService', function ($http)
                     IngredientService.ingredients.push(data);
                 })
                 .error(function( data, status, headers, config) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
 
         },
@@ -137,7 +137,7 @@ inventoryApp.factory('IngredientService', function ($http)
                     return IngredientService;
                 })
                 .error(function (data, status) {
-                    alert("Error" + status);
+                    alert("Error " + status);
                 });
         }
     };

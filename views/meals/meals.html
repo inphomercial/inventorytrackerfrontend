@@ -1,47 +1,35 @@
-
 <div ng-controller="mealsController">
-
-	<div class="row">
-		<div class="small-2 columns"><h2>Meals</h2></div>
-		<div class="small-2 columns end"><button class="tiny" ng-click="showCreateMeal()">Create Meal</button></div>
-	</div>
-	<div class="row">
-		<div class="small-12 columns" ng-show="createMealPushed">
-			<div class="row">
-				<div class="small-4 large-4 columns"><b>Create new Meal</b></div>
-			</div>
-			<div class="row">
-				<div class="small-3 large-4 columns"><input type="text" placeholder="Name" ng-model="new_meal_name"></div>
-				<div class="small-3 large-4 columns"><input type="text" placeholder="Enabled" ng-model="new_meal_enabled"></div>
-				<div class="small-3 large-4 columns"><button ng-click="newMeal()">Create Meal</button></div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="small-6 columns">
-			<p> Total number of meals : {{ meals.length }}</p>
-				<div class="row">
-					<div class="small-6 columns">
-						<input ng-model="query" placeholder="Search">
-					</div>
-				</div>
-			<div class="row">
-				<br>
-			</div>
-			<table>
-				<thead>
-				    <tr>
-				      	<th>Name</th>
-				      	<th>Enabled</th>
-				    </tr>
-			  	</thead>
-			  	<tbody>
-				    <tr ng-repeat="meal in meals | filter:query | orderBy:orderBy">
-				      	<td><a href="#editMeal/{{ meal.id }}">{{ meal.name }}</a></td>
-				      	<td><input type="checkbox" ng-model="meal.enabled" ng-true-value="1" ng-false-value="0" ng-change="updateEnabled(meal)"></td>
-				    </tr>
-			  	</tbody>
-			</table>
-		</div>
-	</div>
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="row">
+                <div class="small-2 columns">
+                    <h2>Meals</h2>
+                </div>
+                <div class="small-4 columns">
+                    <input class="pad-top" type="text" ng-model="new_meal_name" placeholder="New Meal">
+                </div>
+                <div class="small-1 columns">
+                    <a class="button postfix pad-top" href="#" ng-click="newMeal()">New Meal</a>
+                </div>
+                <div class="small-3 columns">
+                    <input class="pad-top" type="search" ng-model="query" placeholder="Search">
+                </div>
+            </div>
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Enabled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="meal in meals | filter:query | orderBy:orderBy">
+                        <td><a href="#editMeal/{{ meal.id }}">{{ meal.name }}</a></td>
+                        <td><input type="checkbox" ng-model="meal.enabled" ng-true-value="1" ng-false-value="0" ng-change="updateEnabled(meal)"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p> Total number of meals : {{ meals.length }}</p>
+        </div>
+    </div>
 </div>
