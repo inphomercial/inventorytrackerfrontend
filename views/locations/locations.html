@@ -16,7 +16,6 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Name</th>
                                 <th>Address</th>
                                 <th>Phone</th>
@@ -27,12 +26,12 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="location in locations | filter:query | orderBy:orderBy">
-                                <td><a href="#adminEditLocation/{{ location.id }}">{{ location.id }}</a></td>
-                                <td>{{ location.name }}</td>
+                                <td><a href="#editLocation/{{ location.id }}">{{ location.name }}</a></td>
                                 <td>{{ location.address }}</td>
                                 <td>{{ location.phone }}</td>
                                 <td>{{ location.created_at }}</td>
-                                <td>{{ location.enabled }}</td>
+                                <td ng-if="location.enabled">True</td>
+                                <td ng-if="location.enabled == false">False</td>
                                 <td>{{ location.company_id }}</td>
                             </tr>
                         </tbody>

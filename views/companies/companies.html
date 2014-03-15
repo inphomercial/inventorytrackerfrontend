@@ -14,7 +14,6 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Name</th>
                         <th>Created</th>
                         <th>Enabled</th>
@@ -22,10 +21,10 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="company in companies | filter:query | orderBy:orderBy">
-                        <td><a href="#adminEditCompany/{{ company.id }}">{{ company.id }}</a></td>
-                        <td>{{ company.name }}</td>
+                        <td><a href="#editCompany/{{ company.id }}">{{ company.name }}</a></td>
                         <td>{{ company.created_at }}</td>
-                        <td>{{ company.enabled }}</td>
+                        <td ng-if="company.enabled">True</td>
+                        <td ng-if="company.enabled == false">False</td>
                     </tr>
                 </tbody>
             </table>
