@@ -1,0 +1,19 @@
+{
+  "name": "itracker",
+  "version": "0.0.1",
+  "description": "inventor tracker front end",
+  "main": "Gruntfile.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://sambev@bitbucket.org/inpho/inventorytrackerfrontend.git"
+  },
+  "author": "Sam Beveridge",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-scss-lint": "0.0.9",
+    "grunt-contrib-sass": "~0.7.2"
+  }
+}

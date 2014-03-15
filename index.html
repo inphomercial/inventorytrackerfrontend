@@ -4,24 +4,26 @@
 <head>
     <title>User Inventory</title>
 
-    <!-- Included CSS Files, use foundation.css if you do not want minified code -->
-  	<link rel="stylesheet" href="foundation.css">
-    <link rel="stylesheet" href="alertify.core.css">
-    <link rel="stylesheet" href="alertify.default.css">
+  	<link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/vendor/alertify.core.css">
+    <link rel="stylesheet" href="assets/css/vendor/alertify.default.css">
 </head>
 
 <body>
-	<div class="row">
-		<div class="small-10 columns">
-            <a href="#companies"   class="button tiny">Admin Companies</a>
-		    <a href="#locations"   class="button tiny">Admin Locations</a>
-		    <a href="#meals"       class="button tiny">Meals</a>
-		    <a href="#ingredients" class="button tiny">Ingredients</a>
-            <a href="#mealSales"   class="button tiny">Meal Sales</a>
-            <a href="#reconciles"  class="button tiny">Reconcile</a>
-            <a href="#reports"     class="button tiny">Reports</a>
+    <div id="header">
+        <div class="row">
+            <div class="small-12 columns">
+                <a href="#companies" class="button small">Companies</a>
+                <a href="#locations" class="button small">Locations</a>
+                <a href="#meals" class="button small">Meals</a>
+                <a href="#ingredients" class="button small">Ingredients</a>
+                <a href="#mealSales" class="button small">Meal Sales</a>
+                <a href="#reconciles" class="button small">Reconcile</a>
+                <a href="#reports" class="button small">Reports</a>
+            </div>
         </div>
-	</div>
+    </div>
 
     <div class="row">
         <div class="small-12 columns">
@@ -29,36 +31,35 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="angular.min.js"></script>  
-    <script type="text/javascript" src="angular-route.min.js"></script>
-    <script type="text/javascript" src="alertify.min.js"></script>
-    
+    <script type="text/javascript" src="js/vendor/angular.min.js"></script>
+    <script type="text/javascript" src="js/vendor/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/vendor/alertify.min.js"></script>
+
     <!-- Source Inventory App -->
-    <script type="text/javascript" src="apps/inventories.js"></script>  
+    <script type="text/javascript" src="js/apps/inventories.js"></script>
 
     <!-- Source Services -->
-    <script type="text/javascript" src="services/company_service.js"></script>
-    <script type="text/javascript" src="services/location_service.js"></script>
-    <script type="text/javascript" src="services/meal_service.js"></script>
-    <script type="text/javascript" src="services/ingredient_service.js"></script>
-    <script type="text/javascript" src="services/stock_service.js"></script>
-    <script type="text/javascript" src="services/reconcile_service.js"></script>
+    <script type="text/javascript" src="js/services/company_service.js"></script>
+    <script type="text/javascript" src="js/services/location_service.js"></script>
+    <script type="text/javascript" src="js/services/meal_service.js"></script>
+    <script type="text/javascript" src="js/services/ingredient_service.js"></script>
+    <script type="text/javascript" src="js/services/stock_service.js"></script>
+    <script type="text/javascript" src="js/services/reconcile_service.js"></script>
 
     <!-- Source Controllers -->
-    <script type="text/javascript" src="controllers/company_controller.js"></script>
-    <script type="text/javascript" src="controllers/company_edit_controller.js"></script>
-    <script type="text/javascript" src="controllers/location_controller.js"></script>      
-    <script type="text/javascript" src="controllers/location_edit_controller.js"></script>
-    <script type="text/javascript" src="controllers/meal_controller.js"></script>
-    <script type="text/javascript" src="controllers/meal_edit_controller.js"></script>
-    <script type="text/javascript" src="controllers/ingredient_controller.js"></script>  
-    <script type="text/javascript" src="controllers/ingredient_edit_controller.js"></script>
-    <script type="text/javascript" src="controllers/stock_controller.js"></script>
-    <script type="text/javascript" src="controllers/reconcile_controller.js"></script>
-    <script type="text/javascript" src="controllers/report_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/company_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/company_edit_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/location_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/location_edit_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/meal_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/meal_edit_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/ingredient_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/ingredient_edit_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/stock_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/reconcile_controller.js"></script>
+    <script type="text/javascript" src="js/controllers/report_controller.js"></script>
 
     <!-- Source Routes -->
-    <script type="text/javascript" src="routes/routes.js"></script>         
-    
+    <script type="text/javascript" src="js/routes/routes.js"></script>
 </body>
 </html>

@@ -1,0 +1,78 @@
+<div ng-controller="locationsController">
+
+    <div class="row">
+        <div class="small-6 columns">
+            <h2>Admin Locations</h2>
+        </div>
+        <div class="small-4 small-offset-2 columns">
+            <input class="search" type="search" ng-model="query" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="row">
+                <div class="small-12 columns">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>Created</th>
+                                <th>Enabled</th>
+                                <th>CompanyID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="location in locations | filter:query | orderBy:orderBy">
+                                <td><a href="#editLocation/{{ location.id }}">{{ location.name }}</a></td>
+                                <td>{{ location.address }}</td>
+                                <td>{{ location.phone }}</td>
+                                <td>{{ location.created_at }}</td>
+                                <td ng-if="location.enabled">True</td>
+                                <td ng-if="location.enabled == false">False</td>
+                                <td>{{ location.company_id }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p> Total number of locations : {{ locations.length }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <input type="text" placeholder="New Name" ng-model="new_location_name">
+                </div>
+                <div class="small-3 columns">
+                    <input type="text" placeholder="Phone" ng-model="new_location_phone">
+                </div>
+                <div class="small-3 columns">
+                    <input type="text" placeholder="Address" ng-model="new_location_address">
+                </div>
+                <div class="small-3 column">
+                    <input type="text" placeholder="City">
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 column">
+                    <input type="text" placeholder="State">
+                </div>
+                <div class="small-3 column">
+                    <input type="text" placeholder="Zip">
+                </div>
+                <div class="small-3 columns">
+                    <input type="text" placeholder="Company id" ng-model="new_location_company_id">
+                </div>
+                <div class="small-3 columns">
+                    <input id="enabled" type="checkbox" ng-model="new_location_enabled">
+                    <label for="enabled">Enabled</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns end">
+                    <button ng-click="newLocation()">Create Location</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

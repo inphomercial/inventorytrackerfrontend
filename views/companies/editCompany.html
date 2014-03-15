@@ -1,0 +1,23 @@
+
+<div class="row">
+    <div class="small-12 columns"><h2>[Admin] Edit Company</h2></div>
+</div>
+
+<div ng-controller="companyEditController">
+    <div class="row">
+        <div class="small-4 columns" ng-show="selected_company.name">
+            <input type="text" ng-model="selected_company.name" value="{{ selected_company.name }}" >
+        </div>
+        <div class="small-2 columns end">
+            <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-model="selected_company.enabled">
+            <label>Enabled</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-6 columns">
+            <button ng-click="updateCompany()">Save</button>
+            <a href="#companies" class="button">Cancel</a>
+            <button class="button alert" ng-click="deleteCompany(seleted_company.id)">Delete!</button>
+        </div>
+    </div>
+</div>

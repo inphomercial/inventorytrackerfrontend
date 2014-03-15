@@ -1,1 +1,6 @@
-/inventorytrackerfrontend.sublime-project
+*.sublime-project
+node_modules
+bower_components
+.sass-cache
+npm-debug.log
+build

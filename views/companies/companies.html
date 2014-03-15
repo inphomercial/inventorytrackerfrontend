@@ -1,0 +1,47 @@
+<div ng-controller="companiesController">
+
+    <div class="row">
+        <div class="small-6 columns">
+            <h2>Admin Companies</h2>
+        </div>
+        <div class="small-4 small-offset-2 columns">
+            <input class="search" type="search" ng-model="query" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Created</th>
+                        <th>Enabled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="company in companies | filter:query | orderBy:orderBy">
+                        <td><a href="#editCompany/{{ company.id }}">{{ company.name }}</a></td>
+                        <td>{{ company.created_at }}</td>
+                        <td ng-if="company.enabled">True</td>
+                        <td ng-if="company.enabled == false">False</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p> Total number of companies : {{ companies.length}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-3 columns">
+            <input type="text" placeholder="New Company" ng-model="new_company_name">
+        </div>
+        <div class="small-2 columns">
+            <input id="enabled" type="checkbox" ng-model="new_company_enabled">
+            <label for="enabled">Enabled</label>
+        </div>
+        <div class="small-2 columns end">
+            <button class="small" ng-click="newCompany()">Create Company</button>
+        </div>
+    </div>
+</div>
