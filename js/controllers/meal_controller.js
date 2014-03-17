@@ -28,15 +28,19 @@ inventoryApp.controller('mealsController', function ($scope, $location, MealServ
 
     $scope.newMeal = function()
     {
-        var newMeal = {
-            "name": $scope.new_meal_name,
-            "enabled" : true
-        };
+        if (!$scope.new_meal_name) {
+            alertify.error('Please enter in a name!');
+        } else {
+            var newMeal = {
+                "name": $scope.new_meal_name,
+                "enabled" : true
+            };
 
-        request = MealService.newMeal(newMeal);
-        request.then(function(res) {
-            // once the meal is created, redirect to the edit page
-            $location.path('/editMeal/' + res.data.id);
-        })
+            request = MealService.newMeal(newMeal);
+            request.then(function(res) {
+                // once the meal is created, redirect to the edit page
+                $location.path('/editMeal/' + res.data.id);
+            })
+        }
     }
 });
