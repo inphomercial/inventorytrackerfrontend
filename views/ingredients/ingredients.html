@@ -1,36 +1,20 @@
-
 <div ng-controller="ingredientsController">
     <div class="row">
-        <div class="small-3 columns"><h2>Ingredients</h2></div>
-        <div class="small-2 columns end"><button class="tiny" ng-click="showCreateIngredient()">Create Ingredient</button></div>
-    </div>
-    <div class="row">
-        <div class="small-12 columns" ng-show="createIngredientPushed">
-            <div class="row">
-                <div class="small-4 columns"><b>Create new Ingredient</b></div>
-            </div>
-            <div class="row">
-                <div class="small-3 columns"><input type="text" placeholder="Name" ng-model="new_ingredient.name"></div>
-                <div class="small-3 columns"><input type="text" placeholder="Unit" ng-model="new_ingredient.unit"></div>
-                <div class="small-3 columns end"><input type="text" placeholder="Enabled" ng-model="new_ingredient.enabled"></div>
-            </div>
-            <div class="row">
-                <div class="small-3 columns"><button ng-click="newIngredient()">Create Ingredient</button></div>
-            </div>
+        <div class="small-3 columns">
+            <h2>Ingredients</h2>
         </div>
-    </div>
-    <div class="row">
-        <div class="small-6 columns">
-            <p> Total number of ingredients : {{ ingredients.length }}</p>
+        <div class="small-3 columns">
+            <input class="pad-top" type="text" ng-model="new_ingredient.name" placeholder="Ingredient Name">
         </div>
-    </div>
-    <div class="row">
-        <div class="small-6 columns">
-            <input ng-model="query" placeholder="Search">
+        <div class="small-2 columns">
+            <input class="pad-top" type="text" placeholder="Unit" ng-model="new_ingredient.unit">
         </div>
-    </div>
-    <div class="row">
-        <br>
+        <div class="small-1 columns">
+            <button class="button postfix pad-top" ng-click="newIngredient()">Add</button>
+        </div>
+        <div class="small-3 columns">
+            <input class="pad-top" type="search" ng-model="query" placeholder="Search">
+        </div>
     </div>
     <div class="row">
         <div class="Small-12 columns">
@@ -48,6 +32,7 @@
                     </tr>
                 </tbody>
             </table>
+            <p> Total number of ingredients : {{ ingredients.length }}</p>
         </div>
     </div>
 </div>
