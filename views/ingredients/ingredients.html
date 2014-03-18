@@ -10,9 +10,12 @@
             <input class="pad-top" type="text" placeholder="Unit" ng-model="new_ingredient.unit">
         </div>
         <div class="small-1 columns">
+            <input class="pad-top" type="text" placeholder="Price" ng-model="new_ingredient.price">
+        </div>
+        <div class="small-1 columns">
             <button class="button postfix pad-top" ng-click="newIngredient()">Add</button>
         </div>
-        <div class="small-3 columns">
+        <div class="small-2 columns">
             <input class="pad-top" type="search" ng-model="query" placeholder="Search">
         </div>
     </div>
@@ -23,12 +26,14 @@
                     <tr>
                         <th>Name</th>
                         <th>Measurement</th>
+                        <th>Price</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="ingredient in ingredients | filter:query | orderBy:orderBy">
                         <td><a href="#editIngredient/{{ ingredient.id }}">{{ ingredient.name }}</a></td>
                         <td>{{ ingredient.unit }}</td>
+                        <td>{{ ingredient.price }}</td>
                     </tr>
                 </tbody>
             </table>

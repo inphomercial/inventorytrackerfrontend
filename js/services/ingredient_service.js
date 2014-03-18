@@ -131,6 +131,7 @@ inventoryApp.factory('IngredientService', function ($http)
                             IngredientService.ingredients[i]['name'] = selected_ingredient.name;
                             IngredientService.ingredients[i]['unit'] = selected_ingredient.unit;
                             IngredientService.ingredients[i]['enabled'] = selected_ingredient.enabled;
+                            IngredientService.ingredients[i]['price'] = selected_ingredient.price;
                         }
                     }
 
