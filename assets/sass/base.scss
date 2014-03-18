@@ -5,3 +5,14 @@ a {
   color: #00bfff;
   text-decoration: underline;
 }
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+button { @include border-radius(3px); }
+
+.button { @include border-radius(3px); }
