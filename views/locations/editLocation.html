@@ -1,32 +1,42 @@
-
-
 <div class="row">
     <div class="small-12 columns"><h2>[Admin] Edit Location</h2></div>
 </div>
 
 <div ng-controller="locationEditController">
     <div class="row">
-        <div class="small-9 columns" ng-show="selected_location.name">
-            <label>Location Name</label>
-            <input type="text" ng-model="selected_location.name" value="{{ selected_location.name }}" >
-
-            <label>Address</label>
-            <input type="text" ng-model="selected_location.address" value="{{ selected_location.address }}" >
-
-            <label>Phone</label>
-            <input type="text" ng-model="selected_location.phone" value="{{ selected_location.phone }}" >
-
-            <label>Enabled</label>
-            <input type="text" ng-model="selected_location.enabled" value="{{ selected_location.enabled }}" >
-
-            <label>Company Id</label>
-            <input type="text" ng-model="selected_location.company_id" value="{{ selected_location.company_id }}" >
-
+        <div class="small-3 columns">
+            <input type="text" placeholder="New Name" ng-model="location.name" value="location.name">
+        </div>
+        <div class="small-3 columns">
+            <input type="text" placeholder="Phone" ng-model="location.phone" value="location.phone">
+        </div>
+        <div class="small-3 columns">
+            <input type="text" placeholder="Address" ng-model="location.address" value="location.address">
+        </div>
+        <div class="small-3 column">
+            <input type="text" placeholder="City" ng-model="location.city" value="location.city">
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-3 column">
+            <input type="text" placeholder="State" ng-model="location.state" value="location.state">
+        </div>
+        <div class="small-3 column">
+            <input type="text" placeholder="Zip" ng-model="location.zip" value="location.zip">
+        </div>
+        <div class="small-3 columns">
+            <input type="text" placeholder="Company id" ng-model="location.company_id" value="location.company_id">
+        </div>
+        <div class="small-3 columns">
+            <input id="enabled" type="checkbox" ng-model="location.enabled">
+            <label for="enabled">Enabled</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12-columns">
             <button ng-click="updateLocation()">Save</button>
             <a href="#locations" class="button">Cancel</a>
-            <button class="button alert" ng-click="deleteLocation(selected_location.id)">Delete!</button>
+            <button class="button alert" ng-click="deleteLocation(location.id)">Delete!</button>
         </div>
     </div>
 </div>
-
-

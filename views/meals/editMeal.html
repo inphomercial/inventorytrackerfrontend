@@ -1,17 +1,21 @@
-<div class="row">
-    <div class="small-12 columns">
-        <h2>Edit Meal</h2>
-    </div>
-</div>
-
 <div ng-controller="mealEditController">
     <div class="row">
-        <div class="small-6 columns" ng-show="meal.name">
-            <label>Meal Name</label>
-            <input type="text" ng-model="meal.name" value="{{ meal.name }}" >
+        <div class="small-12 columns">
+            <h2>Edit Meal</h2>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="small-6 columns">
+            <input type="text" ng-model="meal.name" value="{{ meal.name }}" placeholder="Meal Name">
+        </div>
+        <div class="small-2 columns end">
+            <input type="checkbox"
+                ng-model="meal.enabled"
+                value="{{ meal.enabled }}"
+                ng-true-value="1"
+                ng-false-value="0">
             <label>Enabled</label>
-            <input type="text" ng-model="meal.enabled" value="{{ meal.enabled }}">
         </div>
     </div>
 
@@ -29,14 +33,17 @@
                 <tbody>
                     <tr ng-repeat="ingredient in meal.ingredients | filter:query | orderBy:orderBy">
                         <td ng-click="removeIngredientFromMeal(meal.id, ingredient.ingredient_id)">{{ ingredient.name }}</td>
-                        <td><input type="text" class="small" ng-model="ingredient.amount" ng-blur="updateIngredientAmount(meal.id, ingredient.ingredient_id, ingredient.amount, $index)"></td>
+                        <td><input type="text"
+                                class="small"
+                                ng-model="ingredient.amount"
+                                ng-blur="updateIngredientAmount(meal.id, ingredient.ingredient_id, ingredient.amount, $index)"></td>
                         <td ng-class="{'button small disabled': ingredient.modified}">{{ ingredient.unit }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="small-5 columns">
+        <div class="small-6 columns">
             <h4>Available Ingredients</h4>
             <table>
                 <thead>
