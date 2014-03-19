@@ -10,12 +10,12 @@ inventoryApp.controller('companiesController', function ($scope, CompanyService)
     $scope.newCompany = function()
     {
         var newCompany = {
-            "name": $scope.new_company_name,
-            "enabled" : $scope.new_company_enabled
+            'name': $scope.new_company_name,
+            'enabled' : $scope.new_company_enabled
         };
 
         CompanyService.newCompany(newCompany);
-        $scope.new_company_name = "";
-        $scope.new_company_enabled = "";
+        $scope.new_company_name = '';
+        $scope.new_company_enabled = '';
     };
 });

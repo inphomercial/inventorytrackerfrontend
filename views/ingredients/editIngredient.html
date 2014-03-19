@@ -7,15 +7,21 @@
 <div ng-controller="ingredientEditController">
     <div class="row">
         <div class="small-3 columns">
-            <input type="text" ng-model="selected_ingredient.name" value="{{ selected_ingredient.name }}">
+            <input type="text"
+                ng-model="ingredient.name"
+                value="ingredient.name"
+                placeholder="Ingredient Name">
         </div>
         <div class="small-3 columns">
-            <input type="text" ng-model="selected_ingredient.unit" value="{{ selected_ingredient.unit }}">
+            <input type="text"
+                ng-model="ingredient.unit"
+                value="ingredient.unit"
+                placeholder="Ingredient Unit">
         </div>
         <div class="small-2 columns end">
             <input type="checkbox"
-                ng-model="selected_ingredient.enabled"
-                value="{{ selected_ingredient.enabled }}"
+                ng-model="ingredient.enabled"
+                value="ingredient.enabled"
                 ng-true-value="1"
                 ng-false-value="0">
             <label>Enabled</label>
@@ -25,7 +31,7 @@
         <div class="small-12 columns">
             <button ng-click="updateIngredient()">Save</button>
             <a href="#ingredients" class="button">Cancel</a>
-            <button class="button alert" ng-click="deleteIngredient(selected_ingredient.id)">Delete!</button>
+            <button class="button alert" ng-click="deleteIngredient(ingredient.id)">Delete!</button>
         </div>
     </div>
 </div>

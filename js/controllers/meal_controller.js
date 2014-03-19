@@ -23,7 +23,7 @@ inventoryApp.controller('mealsController', function ($scope, $location, MealServ
             meal.enabled = 1;
         }
 
-        console.log("updating enabled " + meal.enabled);
+        console.log('updating enabled ' + meal.enabled);
     },
 
     $scope.newMeal = function()
@@ -32,8 +32,8 @@ inventoryApp.controller('mealsController', function ($scope, $location, MealServ
             alertify.error('Please enter in a name!');
         } else {
             var newMeal = {
-                "name": $scope.new_meal_name,
-                "enabled" : true
+                'name': $scope.new_meal_name,
+                'enabled' : true
             };
 
             request = MealService.newMeal(newMeal);
