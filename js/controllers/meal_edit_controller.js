@@ -12,7 +12,11 @@ inventoryApp.controller('mealEditController', function ($scope, $routeParams, $l
         new_request.then(function(res) {
             IngredientService.ingredients.forEach(function(ingredient, index) {
                 // only add ingredients that we don't already have
-                if (!hasIngredient(ingredient, $scope.meal.ingredients)) {
+                if ($scope.meal.ingredients) {
+                    if (!hasIngredient(ingredient, $scope.meal.ingredients)) {
+                        $scope.available_ingredients.push(ingredient);
+                    }
+                } else {
                     $scope.available_ingredients.push(ingredient);
                 }
             });
@@ -78,7 +82,7 @@ inventoryApp.controller('mealEditController', function ($scope, $routeParams, $l
 
     $scope.updateMeal = function() {
         MealService.updateMeal($scope.meal);
-        $location.path('/meals');
+        // $location.path('/meals');
     };
 
     /**

@@ -64,6 +64,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService) {
             var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + meal.id + "?key=loc2";
             return $http.put(url, meal)
                 .success(function (response) {
+                    console.log(response);
                     alertify.success("Meal Updated");
                     for(var i=0; i < MealService.meals.length; i++) {
                         if(MealService.meals[i].id == meal.id) {
@@ -71,7 +72,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService) {
                             MealService.meals[i]['enabled'] = meal.enabled;
                         }
                     }
-                    return MealService;
+                    return response;
                 })
                 .error(function (data, status) {
                     alert("Error " + status);
