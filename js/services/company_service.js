@@ -7,7 +7,7 @@ inventoryApp.factory('CompanyService', function($http)
 
         getCompanyById: function(id)
         {
-            var url = "http://localhost/inventorytracker/public/index.php/admin/" + id + "?key=admin";
+            var url = inventoryApp.url + "admin/" + id + "?key=admin";
 
             return $http.get(url)
                 .success(function (response) {
@@ -19,8 +19,8 @@ inventoryApp.factory('CompanyService', function($http)
         },
 
         getCompanies: function()
-        {
-            var url = "http://localhost/inventorytracker/public/index.php/admin?key=admin";
+        {            
+            var url = inventoryApp.url + "admin?key=admin";
 
             return $http.get(url)
                 .success(function (response) {
@@ -40,7 +40,7 @@ inventoryApp.factory('CompanyService', function($http)
 
         deleteCompany: function(id)
         {
-            var url = "http://localhost/inventorytracker/public/index.php/admin/" + id + "?key=admin";
+            var url = inventoryApp.url + "admin/" + id + "?key=admin";
 
             return $http.delete(url)
                 .success(function (response) {
@@ -65,7 +65,7 @@ inventoryApp.factory('CompanyService', function($http)
 
         newCompany: function(newCompany) {
 
-            var postUrl = "http://localhost/inventorytracker/public/index.php/admin?key=admin";
+            var postUrl = inventoryApp.url + "admin?key=admin";
 
             return $http({method: 'POST', url: postUrl, data: newCompany })
                 .success(function( data, status, headers, config )
@@ -81,7 +81,7 @@ inventoryApp.factory('CompanyService', function($http)
 
         updateCompany: function(selected_company) {
 
-            var url = "http://localhost/inventorytracker/public/index.php/admin/" + selected_company.id + "?key=admin";
+            var url = inventoryApp.url + "admin/" + selected_company.id + "?key=admin";
 
             return $http.put(url, selected_company)
                 .success(function (response)

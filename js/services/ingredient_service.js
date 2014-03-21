@@ -4,7 +4,7 @@ inventoryApp.factory('IngredientService', function ($http) {
         ingredients: [],
 
         getIngredientById: function(id) {
-            var url = "http://localhost/inventorytracker/public/index.php/location/ingredients/" + id + "?key=loc2";
+            var url = inventoryApp.url + "location/ingredients/" + id + "?key=loc2";
             return $http.get(url)
                 .success(function (response) {
                     return response;
@@ -16,7 +16,7 @@ inventoryApp.factory('IngredientService', function ($http) {
         },
 
         removeIngredientFromMeal: function(meal_id, ingredient_id) {
-            var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + meal_id + "/ingredients/" + ingredient_id + "?key=loc2";
+            var url = inventoryApp.url + "location/meals/" + meal_id + "/ingredients/" + ingredient_id + "?key=loc2";
             return $http.delete(url)
                 .success(function (response) {
                     alertify.success("Ingredient Removed From Meal");
@@ -29,7 +29,7 @@ inventoryApp.factory('IngredientService', function ($http) {
         },
 
         addIngredientToMeal: function(meal_id, ingredient_id, amount) {
-            var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + meal_id + "/ingredients?key=loc2";
+            var url = inventoryApp.url + "location/meals/" + meal_id + "/ingredients?key=loc2";
             var data = {
                 'meal_id': meal_id,
                 'ingredient_id': ingredient_id,
@@ -48,7 +48,7 @@ inventoryApp.factory('IngredientService', function ($http) {
         },
 
         getIngredients: function() {
-            var url = "http://localhost/inventorytracker/public/index.php/location/ingredients?key=loc2";
+            var url = inventoryApp.url + "location/ingredients?key=loc2";
             return $http.get(url)
                 .success(function (response) {
                     IngredientService.ingredients = [];
@@ -64,7 +64,7 @@ inventoryApp.factory('IngredientService', function ($http) {
         },
 
         deleteIngredient: function(id) {
-            var url = "http://localhost/inventorytracker/public/index.php/location/ingredients/" + id + "?key=loc2";
+            var url = inventoryApp.url + "location/ingredients/" + id + "?key=loc2";
             return $http.delete(url)
                 .success(function (response) {
                     alertify.success("Ingredient Deleted");
@@ -82,7 +82,7 @@ inventoryApp.factory('IngredientService', function ($http) {
 
         // Create a new ingredient based on $key for location_id
         newIngredient: function(newIngredient) {
-            var postUrl = "http://localhost/inventorytracker/public/index.php/location/ingredients?key=loc2";
+            var postUrl = inventoryApp.url + "location/ingredients?key=loc2";
             return $http({method: 'POST', url: postUrl, data: newIngredient })
                 .success(function( data, status, headers, config ) {
                     alertify.success("Ingredient Created");
@@ -96,7 +96,7 @@ inventoryApp.factory('IngredientService', function ($http) {
         },
 
         updateIngredient: function(selected_ingredient) {
-            var url = "http://localhost/inventorytracker/public/index.php/location/ingredients/" + selected_ingredient.id + "?key=loc2";
+            var url = inventoryApp.url + "location/ingredients/" + selected_ingredient.id + "?key=loc2";
             return $http.put(url, selected_ingredient)
                 .success(function (response) {
                     alertify.success("Ingredient Updated");

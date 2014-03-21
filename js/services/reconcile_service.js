@@ -6,7 +6,7 @@ inventoryApp.factory('ReconcileService', function ($http)
 
 		getStock: function() 
 		{
-			var url = "http://localhost/inventorytracker/public/index.php/location/ingredients?key=loc2";
+			var url = inventoryApp.url + "location/ingredients?key=loc2";
 
 			return $http.get(url)
 				.success(function (response) {
@@ -26,7 +26,7 @@ inventoryApp.factory('ReconcileService', function ($http)
 
 		updateStock: function(stock, new_stock_amount)
 		{
-			var url = "http://localhost/inventorytracker/public/index.php/location/ingredients/" + stock.id + "?key=loc2";	
+			var url = inventoryApp.url + "location/ingredients/" + stock.id + "?key=loc2";	
 
 			var reconcile_row = {				
 				"ingredient_id": stock.id,
@@ -67,7 +67,7 @@ inventoryApp.factory('ReconcileService', function ($http)
 		// Create a new ingredient based on $key for location_id
 		reconcileIngredient: function(reconcile) {
 			
-			var postUrl = "http://localhost/inventorytracker/public/index.php/location/reconcile?key=loc2";
+			var postUrl = inventoryApp.url + "location/reconcile?key=loc2";
 
 			return $http({method: 'POST', url: postUrl, data: reconcile })
 				.success(function( data, status, headers, config ) 

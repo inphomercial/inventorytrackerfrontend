@@ -6,7 +6,7 @@ inventoryApp.factory('LocationService', function ($http)
 
         getLocationById: function(id)
         {
-            var url = "http://localhost/inventorytracker/public/index.php/admin/locations/" + id + "?key=admin";
+            var url = inventoryApp.url + "admin/locations/" + id + "?key=admin";
 
             return $http.get(url)
                 .success(function (response) {
@@ -19,7 +19,7 @@ inventoryApp.factory('LocationService', function ($http)
 
         getLocations: function()
         {
-            var url = "http://localhost/inventorytracker/public/index.php/admin/locations?key=admin";
+            var url = inventoryApp.url + "admin/locations?key=admin";
 
             return $http.get(url)
                 .success(function (response) {
@@ -39,7 +39,7 @@ inventoryApp.factory('LocationService', function ($http)
 
         deleteLocation: function(id)
         {
-            var url = "http://localhost/inventorytracker/public/index.php/admin/locations/" + id + "?key=admin";
+            var url = inventoryApp.url + "admin/locations/" + id + "?key=admin";
 
             return $http.delete(url)
                 .success(function (response) {
@@ -63,7 +63,7 @@ inventoryApp.factory('LocationService', function ($http)
 
         newLocation: function(newLocation) {
 
-            var postUrl = "http://localhost/inventorytracker/public/index.php/admin/locations/" + newLocation.company_id + "?key=admin";
+            var postUrl = inventoryApp.url + "admin/locations/" + newLocation.company_id + "?key=admin";
 
             return $http({method: 'POST', url: postUrl, data: newLocation })
                 .success(function( data, status, headers, config )
@@ -79,7 +79,7 @@ inventoryApp.factory('LocationService', function ($http)
 
         updateLocation: function(selected_location) {
 
-            var url = "http://localhost/inventorytracker/public/index.php/admin/locations/" + selected_location.id + "?key=admin";
+            var url = inventoryApp.url + "admin/locations/" + selected_location.id + "?key=admin";
 
             return $http.put(url, selected_location)
                 .success(function (response) {

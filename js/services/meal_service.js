@@ -3,7 +3,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService) {
         meals: [],
 
         getMealById: function(id) {
-            var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + id + "/ingredients?key=loc2";
+            var url = inventoryApp.url + "location/meals/" + id + "/ingredients?key=loc2";
             return $http.get(url)
                 .success(function (response) {
                     return response;
@@ -14,7 +14,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService) {
         },
 
         getMeals: function() {
-            var url = "http://localhost/inventorytracker/public/index.php/location/meals?key=loc2";
+            var url = inventoryApp.url + "location/meals?key=loc2";
             return $http.get(url)
                 .success(function (response) {
                     MealService.meals = [];
@@ -29,7 +29,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService) {
         },
 
         deleteMeal: function(id) {
-            var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + id + "?key=loc2";
+            var url = inventoryApp.url + "location/meals/" + id + "?key=loc2";
             return $http.delete(url)
                 .success(function (response) {
                     alertify.success("Meal Deleted");
@@ -47,7 +47,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService) {
 
         // Create a new ingredient based on $key for location_id
         newMeal: function(newMeal) {
-            var postUrl = "http://localhost/inventorytracker/public/index.php/location/meals?key=loc2";
+            var postUrl = inventoryApp.url + "location/meals?key=loc2";
             return $http({method: 'POST', url: postUrl, data: newMeal })
                 .success(function( data, status, headers, config )
                 {
@@ -61,7 +61,7 @@ inventoryApp.factory('MealService', function ($http, IngredientService) {
         },
 
         updateMeal: function(meal) {
-            var url = "http://localhost/inventorytracker/public/index.php/location/meals/" + meal.id + "?key=loc2";
+            var url = inventoryApp.url + "location/meals/" + meal.id + "?key=loc2";
             return $http.put(url, meal)
                 .success(function (response) {
                     console.log(response);

@@ -6,7 +6,7 @@ inventoryApp.factory('StockService', function ($http, MealService, IngredientSer
 
 		getStock: function() 
 		{
-			var url = "http://localhost/inventorytracker/public/index.php/location/meals?key=loc2";
+			var url = inventoryApp.url + "location/meals?key=loc2";
 
 			return $http.get(url)
 				.success(function (response) {
