@@ -1,4 +1,4 @@
-inventoryApp .config(['$routeProvider',
+inventoryApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/companies', {

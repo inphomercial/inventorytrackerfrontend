@@ -26,8 +26,8 @@
                             <input type="text" ng-model="ingredient.amount" placeholder="amount">
                         </div>
                         <div class="small-3 columns">
-                            <button class="tiny secondary" ng-click="ingredient.amount = ingredient.amount - 1">-</button>
-                            <button class="tiny secondary" ng-click="ingredient.amount = ingredient.amount + 1">+</button>
+                            <button class="tiny secondary" ng-click="decAmount(ingredient)">-</button>
+                            <button class="tiny secondary" ng-click="incAmount(ingredient)">+</button>
                         </div>
                         <div class="small-3 columns end">
                             <button class="tiny alert"

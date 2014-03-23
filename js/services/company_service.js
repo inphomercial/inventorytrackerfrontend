@@ -1,12 +1,8 @@
-inventoryApp.factory('CompanyService', function($http)
-{
+inventoryApp.factory('CompanyService', function($http) {
     var CompanyService = {
-
         companies: [],
 
-
-        getCompanyById: function(id)
-        {
+        getCompanyById: function(id) {
             var url = inventoryApp.url + "admin/" + id + "?key=admin";
 
             return $http.get(url)
@@ -18,19 +14,16 @@ inventoryApp.factory('CompanyService', function($http)
                 });
         },
 
-        getCompanies: function()
-        {            
+        getCompanies: function() {
             var url = inventoryApp.url + "admin?key=admin";
 
             return $http.get(url)
                 .success(function (response) {
                     // it worked reset companies to stop duplication
                     CompanyService.companies = [];
-                    for(var i=0; i < response.length; i++)
-                    {
+                    for(var i=0; i < response.length; i++) {
                         CompanyService.companies.push(response[i]);
                     }
-
                     return CompanyService.companies;
                 })
                 .error(function (data, status) {
@@ -44,18 +37,13 @@ inventoryApp.factory('CompanyService', function($http)
 
             return $http.delete(url)
                 .success(function (response) {
-                    // it worked
                     alertify.success("Company Deleted");
-
-                    for(var i=0; i < CompanyService.companies.length; i++)
-                    {
-                        if(CompanyService.companies[i].id == id)
-                        {
+                    for(var i=0; i < CompanyService.companies.length; i++) {
+                        if(CompanyService.companies[i].id == id) {
                             CompanyService.companies.splice(i, 1);
                         }
                     }
                     console.log(CompanyService.companies);
-
                     return CompanyService;
                 })
                 .error(function (data, status) {

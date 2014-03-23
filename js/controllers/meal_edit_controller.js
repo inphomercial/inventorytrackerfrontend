@@ -3,7 +3,11 @@ inventoryApp.controller('mealEditController', function ($scope, $routeParams, $l
     $scope.meal = {};
     $scope.available_ingredients = [];
 
-    // Initialize the meal to be edited
+    /**
+     * Bootstrap code to initial the page.  Get the meal and it's ingredients.
+     * Then fiter the available ingredient list for any ingredients in the meal
+     * to avoid duplicates
+     */
     var request = MealService.getMealById($scope.meal_id);
     request.then(function(res) {
         $scope.meal = res.data;
@@ -71,19 +75,56 @@ inventoryApp.controller('mealEditController', function ($scope, $routeParams, $l
         });
     };
 
-    $scope.updateIngredientAmount = function (meal_id, ingredient_id, amount, $index) {
-        IngredientService.addIngredientToMeal(meal_id, ingredient_id, amount);
-    };
-
+    /**
+     * @method deleteMeal
+     * @param  {int} id is of the meal to be deleted
+     * @return {None} redirect to the meal page
+     */
     $scope.deleteMeal = function(id) {
         MealService.deleteMeal(id);
         $location.path('/meals');
     };
 
+    /**
+     * @method updateMeal update the meal and any applicable ingredients
+     * @return {None} redirect to the meal page
+     */
     $scope.updateMeal = function() {
-        MealService.updateMeal($scope.meal);
-        // $location.path('/meals');
+        var req = MealService.updateMeal($scope.meal);
+        var meal = $scope.meal;
+        var meal_id = $scope.meal.id
+        req.then(function (res) {
+            // If we have ingredients we need to update them as well.
+            if (meal.ingredients) {
+                meal.ingredients.forEach(function(ingredient) {
+                    IngredientService.addIngredientToMeal(
+                        meal.id,
+                        ingredient.ingredient_id,
+                        ingredient.amount
+                    );
+                });
+            }
+            $location.path('/meals');
+        });
     };
+
+    /**
+     * @method decAmount decrement the ingredients amount by 1
+     * @param  {MealIngredient}
+     * @return None
+     */
+    $scope.decAmount = function(ingredient) {
+        ingredient.amount = parseInt(ingredient.amount) - 1;
+    }
+
+    /**
+     * @method incAmount increment the ingredient amount by 1
+     * @param  {MealIngredient}
+     * @return {None}
+     */
+    $scope.incAmount = function(ingredient) {
+        ingredient.amount = parseInt(ingredient.amount) + 1;
+    }
 
     /**
      * Helper function for checking to see if a given ingredient is in a list
