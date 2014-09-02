@@ -26,9 +26,9 @@ inventoryApp.factory('ReconcileService', function ($http)
 
 		updateStock: function(stock, new_stock_amount)
 		{
-			var url = inventoryApp.url + "location/ingredients/" + stock.id + "?key=loc2";	
+			var url = inventoryApp.url + "location/ingredients/" + stock.id + "?key=loc2";
 
-			var reconcile_row = {				
+			var reconcile_row = {
 				"ingredient_id": stock.id,
 				"estimated_stock": stock.stock,
 				"actual_stock": new_stock_amount
@@ -38,46 +38,46 @@ inventoryApp.factory('ReconcileService', function ($http)
 			ReconcileService.reconcileIngredient(reconcile_row);
 
 			var selected_stock = {
-				"ingredient_id": stock.id,			
-				"stock": new_stock_amount				
+				"ingredient_id": stock.id,
+				"stock": new_stock_amount
 			};
 
 			return $http.put(url, selected_stock)
-				.success(function (response) 
+				.success(function (response)
 				{
 					alertify.success("Stock Updated");
 
-					// it worked						
+					// it worked
 					for(var i=0; i < ReconcileService.stocks.length; i++)
-					{					
+					{
 						if(ReconcileService.stocks[i].id == stock.id)
-						{												
+						{
 							ReconcileService.stocks[i]['stock'] = new_stock_amount;
-						}										
-					}							
+						}
+					}
 
 					return ReconcileService.stocks;
 				})
 				.error(function (data, status) {
 					alert("Error" + status);
-				});			
+				});
 		},
 
 
 		// Create a new ingredient based on $key for location_id
 		reconcileIngredient: function(reconcile) {
-			
+
 			var postUrl = inventoryApp.url + "location/reconcile?key=loc2";
 
 			return $http({method: 'POST', url: postUrl, data: reconcile })
-				.success(function( data, status, headers, config ) 
-				{												
+				.success(function( data, status, headers, config )
+				{
 					console.log("reconciled row success");
 				})
 				.error(function( data, status, headers, config) {
 					alert("Error" + status);
 				});
-		}		
+		}
 	};
 
 	return ReconcileService;

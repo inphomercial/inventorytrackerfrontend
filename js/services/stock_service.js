@@ -1,10 +1,10 @@
-inventoryApp.factory('StockService', function ($http, MealService, IngredientService, ReconcileService) 
-{	
+inventoryApp.factory('StockService', function ($http, MealService, IngredientService, ReconcileService)
+{
 	var StockService = {
 
 		stocks: [],
 
-		getStock: function() 
+		getStock: function()
 		{
 			var url = inventoryApp.url + "location/meals?key=loc2";
 
@@ -13,11 +13,11 @@ inventoryApp.factory('StockService', function ($http, MealService, IngredientSer
 					// it worked
 					StockService.stocks = [];
 					for(var i=0; i < response.length; i++)
-					{						
+					{
 						if(response[i].enabled)
 						{
-							StockService.stocks.push(response[i]);	
-						}					
+							StockService.stocks.push(response[i]);
+						}
 					}
 
 					return StockService.stocks;
@@ -27,32 +27,32 @@ inventoryApp.factory('StockService', function ($http, MealService, IngredientSer
 				});
 		},
 
-		sellMeal: function(meal)	
+		sellMeal: function(meal)
 		{
-			for (var i =0; i< meal.ingredients.length; i++) 
+			for (var i =0; i< meal.ingredients.length; i++)
 			{
-				var newTotalStock = meal.ingredients[i].stock - meal.ingredients[i].amount;			
+				var newTotalStock = meal.ingredients[i].stock - meal.ingredients[i].amount;
 				var updatedIngredient = {
 					"id": meal.ingredients[i].ingredient_id,
 					"stock": newTotalStock
 				};
-				
-				IngredientService.updateIngredient(updatedIngredient);			
-			};					
+
+				IngredientService.updateIngredient(updatedIngredient);
+			};
 		},
 
-		undoSellMeal: function(meal, totalWasteAndSoldToRevert)	
+		undoSellMeal: function(meal, totalWasteAndSoldToRevert)
 		{
-			for (var i =0; i< meal.ingredients.length; i++) 
+			for (var i =0; i< meal.ingredients.length; i++)
 			{
 				var total = meal.ingredients[i].stock + (meal.ingredients[i].amount * totalWasteAndSoldToRevert);
 				var updatedIngredient = {
 					"id": meal.ingredients[i].ingredient_id,
 					"stock": total
 				};
-				
-				IngredientService.updateIngredient(updatedIngredient);	
-			};					
+
+				IngredientService.updateIngredient(updatedIngredient);
+			};
 		}
 	};
 
